@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Adventure.Telas
 {
-    public partial class TelaJogo : Form
+    public partial class TelaContinua : Form
     {
-        public TelaJogo(string x)
+        public TelaContinua()
         {
-            InitializeComponent(x);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            InitializeComponent();
         }
     }
 }

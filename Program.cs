@@ -1,3 +1,5 @@
+using Adventure.Estrutura;
+using Adventure.Telas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +19,15 @@ namespace Adventure
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaPrincipal());
+            Inicia();
         }
+
+        public static void Inicia()
+        {
+            Jogo jogo = new Jogo();
+            jogo.Jogar();
+        }
+
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Adventure.Telas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,16 @@ namespace Adventure
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtNovoJogo_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BtSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

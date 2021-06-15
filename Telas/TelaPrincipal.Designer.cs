@@ -57,6 +57,7 @@ namespace Adventure
             this.BtNovoJogo.TabIndex = 1;
             this.BtNovoJogo.Text = "Novo Jogo";
             this.BtNovoJogo.UseVisualStyleBackColor = false;
+            this.BtNovoJogo.Click += new System.EventHandler(this.BtNovoJogo_Click);
             // 
             // BtContinuar
             // 
@@ -81,6 +82,7 @@ namespace Adventure
             this.BtSair.TabIndex = 1;
             this.BtSair.Text = "Sair";
             this.BtSair.UseVisualStyleBackColor = false;
+            this.BtSair.Click += new System.EventHandler(this.BtSair_Click);
             // 
             // TelaPrincipal
             // 
