@@ -9,5 +9,8 @@ namespace Adventure.Estrutura
     public class Decisao
     {
         public Boolean RecebeuInformacoesLaboratorio { get; set; }
+
+
+
     }
 }

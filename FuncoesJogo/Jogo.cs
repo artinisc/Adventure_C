@@ -11,16 +11,42 @@ namespace Adventure.Estrutura
     public class Jogo
     {
         Personagem personagem = new Personagem();
-        int resposta = 0;
+        public int resposta = 0;
         Boolean avanca = false;
 
-        public void Jogar()
+        public void Inicia()
+        {
+           
+            TelaPrincipal x = new TelaPrincipal();
+            Application.Run(x);
+
+            if (x.Resposta == 1)
+            {
+                NovoJogo();
+            }
+            else if (x.Resposta == 2)
+            {
+                ContinuarJogo();
+            }
+
+        }
+
+        public void NovoJogo()
         {
             //partes do jogo
             //CriaPersonagem criarPersonagem = new CriaPersonagem();
 
-            Application.Run(new TelaPrincipal());
             Application.Run(new TelaJogo("teste"));
+        }
+
+        public void ContinuarJogo()
+        {
+
+        }
+
+        public void Jogar()
+        {
+
         }
     }
 

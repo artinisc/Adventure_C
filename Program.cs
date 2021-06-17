@@ -25,7 +25,7 @@ namespace Adventure
         public static void Inicia()
         {
             Jogo jogo = new Jogo();
-            jogo.Jogar();
+            jogo.Inicia();
         }
 
 

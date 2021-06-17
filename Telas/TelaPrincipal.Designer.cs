@@ -70,6 +70,7 @@ namespace Adventure
             this.BtContinuar.TabIndex = 1;
             this.BtContinuar.Text = "Continuar";
             this.BtContinuar.UseVisualStyleBackColor = false;
+            this.BtContinuar.Click += new System.EventHandler(this.BtContinuar_Click);
             // 
             // BtSair
             // 

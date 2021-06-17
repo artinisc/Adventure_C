@@ -11,7 +11,6 @@ namespace Adventure.FuncoesJogo
     {
         public Personagem criarP()
         {
-
             //personagm
             Personagem personagem = new Personagem();
 
