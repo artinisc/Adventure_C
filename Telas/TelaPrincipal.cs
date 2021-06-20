@@ -22,7 +22,7 @@ namespace Adventure
 
         public int Resposta { get; set; }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void TelaPrincipal_Load(object sender, EventArgs e)
         {
 
         }

@@ -26,7 +26,8 @@ namespace Adventure.Estrutura
         public int Vitalidade { get; set; }
         public int VitalidadeAtual { get; set; }
         public int ultimaR { get; set; }
-        public Boolean estado { get; set; }
+        public bool estado { get; set; }
+        public string etapa { get; set; }
 
         public Decisao escolhas = new Decisao();
         private Classe classe = new Classe();

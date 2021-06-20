@@ -1,4 +1,7 @@
 ﻿
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Adventure
 {
     partial class TelaPrincipal
@@ -87,9 +90,9 @@ namespace Adventure
             // 
             // TelaPrincipal
             // 
+            this.BackgroundImage = Image.FromFile(Application.StartupPath + @"\Imagens\Tela_Principal\Menu_Principal.jpg"); 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Adventure.Properties.Resources.Menu_Principal_1024x768;
             this.ClientSize = new System.Drawing.Size(1006, 721);
             this.Controls.Add(this.BtSair);
             this.Controls.Add(this.BtContinuar);
@@ -97,7 +100,7 @@ namespace Adventure
             this.Controls.Add(this.Logo);
             this.Name = "TelaPrincipal";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.TelaPrincipal_Load);
             this.ResumeLayout(false);
 
         }

@@ -16,9 +16,7 @@ namespace Adventure.FuncoesJogo
 
             //seta id e nome do personagem
             personagem.Id = 1;
-            Console.Clear();
-            Console.WriteLine("Qual o seu nome?");
-            personagem.Nome = Console.ReadLine();
+            personagem.Nome = "";
 
             personagem.CarismaBase = 10;
             personagem.InteligenciaBase = 10;
@@ -28,12 +26,9 @@ namespace Adventure.FuncoesJogo
             personagem.VelocidadeBase = 10;
             personagem.VitalidadeBase = 50;
             personagem.estado = true;
-
-            //exibe personagem
-            Console.Clear();
+            personagem.etapa = "prologo";
 
             return personagem;
-
         }
 
         public Personagem escolherC(Personagem personagem)
