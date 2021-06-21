@@ -42,131 +42,138 @@ namespace Adventure.Telas
             this.vlForca = new System.Windows.Forms.Label();
             this.vlSabedoria = new System.Windows.Forms.Label();
             this.vlAgilidade = new System.Windows.Forms.Label();
+            this.vlDinheiro = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btOp1
             // 
             this.btOp1.BackColor = System.Drawing.Color.Transparent;
-            this.btOp1.Location = new System.Drawing.Point(832, 514);
+            this.btOp1.Location = new System.Drawing.Point(634, 418);
             this.btOp1.Name = "btOp1";
-            this.btOp1.Size = new System.Drawing.Size(94, 29);
+            this.btOp1.Size = new System.Drawing.Size(360, 85);
             this.btOp1.TabIndex = 0;
-            this.btOp1.Text = "button1";
             this.btOp1.UseVisualStyleBackColor = false;
             // 
             // btOp2
             // 
             this.btOp2.BackColor = System.Drawing.Color.Transparent;
-            this.btOp2.Location = new System.Drawing.Point(832, 584);
+            this.btOp2.Location = new System.Drawing.Point(634, 522);
             this.btOp2.Name = "btOp2";
-            this.btOp2.Size = new System.Drawing.Size(94, 29);
+            this.btOp2.Size = new System.Drawing.Size(360, 85);
             this.btOp2.TabIndex = 1;
-            this.btOp2.Text = "button2";
             this.btOp2.UseVisualStyleBackColor = false;
             // 
             // btOp3
             // 
             this.btOp3.BackColor = System.Drawing.Color.Transparent;
-            this.btOp3.Location = new System.Drawing.Point(832, 654);
+            this.btOp3.Location = new System.Drawing.Point(634, 624);
             this.btOp3.Name = "btOp3";
-            this.btOp3.Size = new System.Drawing.Size(94, 29);
+            this.btOp3.Size = new System.Drawing.Size(360, 85);
             this.btOp3.TabIndex = 2;
-            this.btOp3.Text = "button3";
             this.btOp3.UseVisualStyleBackColor = false;
             // 
             // btMenu
             // 
             this.btMenu.BackColor = System.Drawing.Color.Black;
-            this.btMenu.Location = new System.Drawing.Point(832, 54);
+            this.btMenu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btMenu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btMenu.Location = new System.Drawing.Point(880, 12);
             this.btMenu.Name = "btMenu";
-            this.btMenu.Size = new System.Drawing.Size(94, 29);
+            this.btMenu.Size = new System.Drawing.Size(114, 48);
             this.btMenu.TabIndex = 3;
-            this.btMenu.Text = "button4";
+            this.btMenu.Text = "Sair";
             this.btMenu.UseVisualStyleBackColor = false;
             // 
             // textoDesc
             // 
-            this.textoDesc.AutoSize = true;
-            this.textoDesc.Location = new System.Drawing.Point(39, 633);
+            this.textoDesc.Location = new System.Drawing.Point(12, 509);
             this.textoDesc.Name = "textoDesc";
-            this.textoDesc.Size = new System.Drawing.Size(50, 20);
+            this.textoDesc.Size = new System.Drawing.Size(500, 200);
             this.textoDesc.TabIndex = 4;
-            this.textoDesc.Text = "label1";
             // 
             // painelStat
             // 
-            this.painelStat.Location = new System.Drawing.Point(12, 9);
+            this.painelStat.Location = new System.Drawing.Point(1, 0);
             this.painelStat.Name = "painelStat";
-            this.painelStat.Size = new System.Drawing.Size(200, 160);
+            this.painelStat.Size = new System.Drawing.Size(227, 190);
             this.painelStat.TabIndex = 5;
-            this.painelStat.Text = "label2";
             // 
             // vlCarisma
             // 
             this.vlCarisma.AutoSize = true;
+            this.vlCarisma.BackColor = System.Drawing.Color.Transparent;
             this.vlCarisma.Location = new System.Drawing.Point(39, 9);
             this.vlCarisma.Name = "vlCarisma";
-            this.vlCarisma.Size = new System.Drawing.Size(50, 20);
+            this.vlCarisma.Size = new System.Drawing.Size(0, 20);
             this.vlCarisma.TabIndex = 6;
-            this.vlCarisma.Text = "label1";
             // 
             // vlInteligencia
             // 
             this.vlInteligencia.AutoSize = true;
+            this.vlInteligencia.BackColor = System.Drawing.Color.Transparent;
             this.vlInteligencia.Location = new System.Drawing.Point(39, 40);
             this.vlInteligencia.Name = "vlInteligencia";
-            this.vlInteligencia.Size = new System.Drawing.Size(50, 20);
+            this.vlInteligencia.Size = new System.Drawing.Size(0, 20);
             this.vlInteligencia.TabIndex = 7;
-            this.vlInteligencia.Text = "label2";
             // 
             // vlResistencia
             // 
             this.vlResistencia.AutoSize = true;
+            this.vlResistencia.BackColor = System.Drawing.Color.Transparent;
             this.vlResistencia.Location = new System.Drawing.Point(39, 72);
             this.vlResistencia.Name = "vlResistencia";
-            this.vlResistencia.Size = new System.Drawing.Size(50, 20);
+            this.vlResistencia.Size = new System.Drawing.Size(0, 20);
             this.vlResistencia.TabIndex = 8;
-            this.vlResistencia.Text = "label3";
             // 
             // vlSaude
             // 
             this.vlSaude.AutoSize = true;
+            this.vlSaude.BackColor = System.Drawing.Color.Transparent;
             this.vlSaude.Location = new System.Drawing.Point(39, 102);
             this.vlSaude.Name = "vlSaude";
-            this.vlSaude.Size = new System.Drawing.Size(50, 20);
+            this.vlSaude.Size = new System.Drawing.Size(0, 20);
             this.vlSaude.TabIndex = 9;
-            this.vlSaude.Text = "label4";
             // 
             // vlForca
             // 
             this.vlForca.AutoSize = true;
+            this.vlForca.BackColor = System.Drawing.Color.Transparent;
             this.vlForca.Location = new System.Drawing.Point(141, 9);
             this.vlForca.Name = "vlForca";
-            this.vlForca.Size = new System.Drawing.Size(50, 20);
+            this.vlForca.Size = new System.Drawing.Size(0, 20);
             this.vlForca.TabIndex = 10;
-            this.vlForca.Text = "label5";
             // 
             // vlSabedoria
             // 
             this.vlSabedoria.AutoSize = true;
+            this.vlSabedoria.BackColor = System.Drawing.Color.Transparent;
             this.vlSabedoria.Location = new System.Drawing.Point(141, 40);
             this.vlSabedoria.Name = "vlSabedoria";
-            this.vlSabedoria.Size = new System.Drawing.Size(50, 20);
+            this.vlSabedoria.Size = new System.Drawing.Size(0, 20);
             this.vlSabedoria.TabIndex = 11;
-            this.vlSabedoria.Text = "label6";
             // 
             // vlAgilidade
             // 
             this.vlAgilidade.AutoSize = true;
+            this.vlAgilidade.BackColor = System.Drawing.Color.Transparent;
             this.vlAgilidade.Location = new System.Drawing.Point(141, 72);
             this.vlAgilidade.Name = "vlAgilidade";
-            this.vlAgilidade.Size = new System.Drawing.Size(50, 20);
+            this.vlAgilidade.Size = new System.Drawing.Size(0, 20);
             this.vlAgilidade.TabIndex = 12;
-            this.vlAgilidade.Text = "label7";
+            // 
+            // vlDinheiro
+            // 
+            this.vlDinheiro.AutoSize = true;
+            this.vlDinheiro.BackColor = System.Drawing.Color.Transparent;
+            this.vlDinheiro.Location = new System.Drawing.Point(141, 102);
+            this.vlDinheiro.Name = "vlDinheiro";
+            this.vlDinheiro.Size = new System.Drawing.Size(0, 20);
+            this.vlDinheiro.TabIndex = 13;
             // 
             // TelaJogo
             // 
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.vlDinheiro);
             this.Controls.Add(this.vlAgilidade);
             this.Controls.Add(this.vlSabedoria);
             this.Controls.Add(this.vlForca);
@@ -202,5 +209,6 @@ namespace Adventure.Telas
         private System.Windows.Forms.Label vlForca;
         private System.Windows.Forms.Label vlSabedoria;
         private System.Windows.Forms.Label vlAgilidade;
+        private System.Windows.Forms.Label vlDinheiro;
     }
 }

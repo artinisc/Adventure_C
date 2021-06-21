@@ -17,8 +17,40 @@ namespace Adventure.PartesJogo
 
             DadosTelaJogo dadosTela1 = new DadosTelaJogo()
             {
-                ImgFundo = @"Genericas\Fundo_Basico.jpg"
+                EstadoBtOp1 = true,
+                EstadoBtOp2 = true,
+                EstadoBtOp3 = true,
+                EstadoBtMenu = true,
+                EstadoTxtDesc = true,
+                EstadoPainelStat = true,
+                EstadoCarisma = true,
+                EstadoInteligencia = true,
+                EstadoResistencia = true,
+                EstadoForca = true,
+                EstadoSabedoria = true,
+                EstadoAgilidade = true,
+                EstadoSaude = true,
+                EstadoDinheiro = true,
+                ImgFundo = @"Genericas\Fundo_Basico.jpg",
+                ImgBtOp1 = @"Genericas\Fundo_Op.png",
+                ImgBtOp2 = @"Genericas\Fundo_Op.png",
+                ImgBtOp3 = @"Genericas\Fundo_Op.png",
+                ImgTxtDesc = @"Genericas\Fundo_Basico.jpg",
+                ImgPainelStat = @"Genericas\Painel_Stat.jpg",
+                TxtBtOp1 = "Teste 1",
+                TxtBtOp2 = "Teste 2",
+                TxtBtOp3 = "Teste 3",
+                TxtTxtDesc = "Teste 4",
+                TxtCarisma = "Teste 5",
+                TxtInteligencia = "Teste 6",
+                TxtResistencia = " Teste 7",
+                TxtForca = "Teste 8",
+                TxtSabedoria = " Teste 9",
+                TxtAgilidade = "Teste 10",
+                TxtSaude = "Teste 11",
+                TxtDinheiro = "Teste 12"
             };
+
             TelaJogo tela1 = new TelaJogo(dadosTela1);
             Application.Run(tela1);
 
