@@ -31,24 +31,26 @@ namespace Adventure.PartesJogo
                 EstadoAgilidade = true,
                 EstadoSaude = true,
                 EstadoDinheiro = true,
-                ImgFundo = @"Genericas\Fundo_Basico.jpg",
+                ImgFundo = @"Prologo\Corredor.jpg",
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
                 ImgBtOp3 = @"Genericas\Fundo_Op.png",
-                ImgTxtDesc = @"Genericas\Fundo_Basico.jpg",
+                ImgTxtDesc = @"Genericas\FundoText.png",
                 ImgPainelStat = @"Genericas\Painel_Stat.jpg",
-                TxtBtOp1 = "Teste 1",
-                TxtBtOp2 = "Teste 2",
-                TxtBtOp3 = "Teste 3",
-                TxtTxtDesc = "Teste 4",
-                TxtCarisma = "Teste 5",
-                TxtInteligencia = "Teste 6",
-                TxtResistencia = " Teste 7",
-                TxtForca = "Teste 8",
-                TxtSabedoria = " Teste 9",
-                TxtAgilidade = "Teste 10",
-                TxtSaude = "Teste 11",
-                TxtDinheiro = "Teste 12"
+                TxtBtOp1 = "Olhar para traz",
+                TxtBtOp2 = "Continuar ao laboratorio",
+                TxtBtOp3 = "Gritar e sair correndo...",
+                TxtTxtDesc = "O dia é 6 de agosto de 1945...\n" +
+                             "Voce caminha tranquilamento pelos corredores do Instituto Nacional de Pesquisas Energeticas de Hiroshima no Japão\n" +
+                             "Dr." + personagem.Nome + " espere!",
+                TxtCarisma = personagem.Carisma,
+                TxtInteligencia = personagem.Inteligencia,
+                TxtResistencia = personagem.Restencia,
+                TxtForca = personagem.Forca,
+                TxtSabedoria = personagem.Magia,
+                TxtAgilidade = personagem.Velocidade,
+                TxtSaude = personagem.Vitalidade,
+                TxtDinheiro = 0
             };
 
             TelaJogo tela1 = new TelaJogo(dadosTela1);

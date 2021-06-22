@@ -48,28 +48,34 @@ namespace Adventure.Telas
             // btOp1
             // 
             this.btOp1.BackColor = System.Drawing.Color.Transparent;
+            this.btOp1.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btOp1.Location = new System.Drawing.Point(634, 418);
             this.btOp1.Name = "btOp1";
             this.btOp1.Size = new System.Drawing.Size(360, 85);
             this.btOp1.TabIndex = 0;
+            this.btOp1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOp1.UseVisualStyleBackColor = false;
             // 
             // btOp2
             // 
             this.btOp2.BackColor = System.Drawing.Color.Transparent;
+            this.btOp2.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btOp2.Location = new System.Drawing.Point(634, 522);
             this.btOp2.Name = "btOp2";
             this.btOp2.Size = new System.Drawing.Size(360, 85);
             this.btOp2.TabIndex = 1;
+            this.btOp2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOp2.UseVisualStyleBackColor = false;
             // 
             // btOp3
             // 
             this.btOp3.BackColor = System.Drawing.Color.Transparent;
+            this.btOp3.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btOp3.Location = new System.Drawing.Point(634, 624);
             this.btOp3.Name = "btOp3";
             this.btOp3.Size = new System.Drawing.Size(360, 85);
             this.btOp3.TabIndex = 2;
+            this.btOp3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOp3.UseVisualStyleBackColor = false;
             // 
             // btMenu
@@ -86,88 +92,99 @@ namespace Adventure.Telas
             // 
             // textoDesc
             // 
-            this.textoDesc.Location = new System.Drawing.Point(12, 509);
+            this.textoDesc.BackColor = System.Drawing.Color.Transparent;
+            this.textoDesc.Font = new System.Drawing.Font("Times New Roman", 15.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.textoDesc.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.textoDesc.Location = new System.Drawing.Point(12, 472);
             this.textoDesc.Name = "textoDesc";
-            this.textoDesc.Size = new System.Drawing.Size(500, 200);
+            this.textoDesc.Size = new System.Drawing.Size(540, 240);
             this.textoDesc.TabIndex = 4;
             // 
             // painelStat
             // 
             this.painelStat.Location = new System.Drawing.Point(1, 0);
             this.painelStat.Name = "painelStat";
-            this.painelStat.Size = new System.Drawing.Size(227, 190);
+            this.painelStat.Size = new System.Drawing.Size(230, 200);
             this.painelStat.TabIndex = 5;
             // 
             // vlCarisma
             // 
-            this.vlCarisma.AutoSize = true;
-            this.vlCarisma.BackColor = System.Drawing.Color.Transparent;
-            this.vlCarisma.Location = new System.Drawing.Point(39, 9);
+            this.vlCarisma.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlCarisma.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlCarisma.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlCarisma.Location = new System.Drawing.Point(55, 0);
             this.vlCarisma.Name = "vlCarisma";
-            this.vlCarisma.Size = new System.Drawing.Size(0, 20);
+            this.vlCarisma.Size = new System.Drawing.Size(50, 40);
             this.vlCarisma.TabIndex = 6;
             // 
             // vlInteligencia
             // 
-            this.vlInteligencia.AutoSize = true;
-            this.vlInteligencia.BackColor = System.Drawing.Color.Transparent;
-            this.vlInteligencia.Location = new System.Drawing.Point(39, 40);
+            this.vlInteligencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlInteligencia.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlInteligencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlInteligencia.Location = new System.Drawing.Point(55, 52);
             this.vlInteligencia.Name = "vlInteligencia";
-            this.vlInteligencia.Size = new System.Drawing.Size(0, 20);
+            this.vlInteligencia.Size = new System.Drawing.Size(50, 40);
             this.vlInteligencia.TabIndex = 7;
             // 
             // vlResistencia
             // 
-            this.vlResistencia.AutoSize = true;
-            this.vlResistencia.BackColor = System.Drawing.Color.Transparent;
-            this.vlResistencia.Location = new System.Drawing.Point(39, 72);
+            this.vlResistencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlResistencia.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlResistencia.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlResistencia.Location = new System.Drawing.Point(55, 102);
             this.vlResistencia.Name = "vlResistencia";
-            this.vlResistencia.Size = new System.Drawing.Size(0, 20);
+            this.vlResistencia.Size = new System.Drawing.Size(50, 40);
             this.vlResistencia.TabIndex = 8;
             // 
             // vlSaude
             // 
-            this.vlSaude.AutoSize = true;
-            this.vlSaude.BackColor = System.Drawing.Color.Transparent;
-            this.vlSaude.Location = new System.Drawing.Point(39, 102);
+            this.vlSaude.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlSaude.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlSaude.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlSaude.Location = new System.Drawing.Point(55, 150);
             this.vlSaude.Name = "vlSaude";
-            this.vlSaude.Size = new System.Drawing.Size(0, 20);
+            this.vlSaude.Size = new System.Drawing.Size(50, 40);
             this.vlSaude.TabIndex = 9;
             // 
             // vlForca
             // 
-            this.vlForca.AutoSize = true;
-            this.vlForca.BackColor = System.Drawing.Color.Transparent;
-            this.vlForca.Location = new System.Drawing.Point(141, 9);
+            this.vlForca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlForca.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlForca.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlForca.Location = new System.Drawing.Point(158, 0);
             this.vlForca.Name = "vlForca";
-            this.vlForca.Size = new System.Drawing.Size(0, 20);
+            this.vlForca.Size = new System.Drawing.Size(50, 40);
             this.vlForca.TabIndex = 10;
             // 
             // vlSabedoria
             // 
-            this.vlSabedoria.AutoSize = true;
-            this.vlSabedoria.BackColor = System.Drawing.Color.Transparent;
-            this.vlSabedoria.Location = new System.Drawing.Point(141, 40);
+            this.vlSabedoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlSabedoria.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlSabedoria.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlSabedoria.Location = new System.Drawing.Point(158, 52);
             this.vlSabedoria.Name = "vlSabedoria";
-            this.vlSabedoria.Size = new System.Drawing.Size(0, 20);
+            this.vlSabedoria.Size = new System.Drawing.Size(50, 40);
             this.vlSabedoria.TabIndex = 11;
             // 
             // vlAgilidade
             // 
-            this.vlAgilidade.AutoSize = true;
-            this.vlAgilidade.BackColor = System.Drawing.Color.Transparent;
-            this.vlAgilidade.Location = new System.Drawing.Point(141, 72);
+            this.vlAgilidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlAgilidade.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlAgilidade.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlAgilidade.Location = new System.Drawing.Point(158, 102);
             this.vlAgilidade.Name = "vlAgilidade";
-            this.vlAgilidade.Size = new System.Drawing.Size(0, 20);
+            this.vlAgilidade.Size = new System.Drawing.Size(50, 40);
             this.vlAgilidade.TabIndex = 12;
             // 
             // vlDinheiro
             // 
-            this.vlDinheiro.AutoSize = true;
-            this.vlDinheiro.BackColor = System.Drawing.Color.Transparent;
-            this.vlDinheiro.Location = new System.Drawing.Point(141, 102);
+            this.vlDinheiro.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.vlDinheiro.Font = new System.Drawing.Font("Times New Roman", 14.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.vlDinheiro.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.vlDinheiro.Location = new System.Drawing.Point(158, 150);
             this.vlDinheiro.Name = "vlDinheiro";
-            this.vlDinheiro.Size = new System.Drawing.Size(0, 20);
+            this.vlDinheiro.Size = new System.Drawing.Size(50, 40);
             this.vlDinheiro.TabIndex = 13;
             // 
             // TelaJogo
@@ -190,7 +207,6 @@ namespace Adventure.Telas
             this.Name = "TelaJogo";
             this.Load += new System.EventHandler(this.TelaJogo_Load_1);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

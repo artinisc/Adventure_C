@@ -56,20 +56,20 @@ namespace Adventure.Estrutura
 
         public string TxtTxtDesc { get; set; }
 
-        public string TxtCarisma { get; set; }
+        public int TxtCarisma { get; set; }
 
-        public string TxtInteligencia { get; set; }
+        public int TxtInteligencia { get; set; }
 
-        public string TxtResistencia { get; set; }
+        public int TxtResistencia { get; set; }
 
-        public string TxtForca { get; set; }
+        public int TxtForca { get; set; }
 
-        public string TxtSabedoria { get; set; }
+        public int TxtSabedoria { get; set; }
 
-        public string TxtAgilidade { get; set; }
+        public int TxtAgilidade { get; set; }
 
-        public string TxtSaude { get; set; }
+        public int TxtSaude { get; set; }
 
-        public string TxtDinheiro { get; set; }
+        public int TxtDinheiro { get; set; }
     }
 }

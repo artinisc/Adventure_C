@@ -31,14 +31,14 @@ namespace Adventure.Telas
             this.btOp2.Text = dadosTela.TxtBtOp2;
             this.btOp3.Text = dadosTela.TxtBtOp3;
             this.textoDesc.Text = dadosTela.TxtTxtDesc;
-            this.vlCarisma.Text = dadosTela.TxtCarisma;
-            this.vlInteligencia.Text = dadosTela.TxtInteligencia;
-            this.vlResistencia.Text = dadosTela.TxtResistencia;
-            this.vlForca.Text = dadosTela.TxtForca;
-            this.vlSabedoria.Text = dadosTela.TxtSabedoria;
-            this.vlAgilidade.Text = dadosTela.TxtAgilidade;
-            this.vlSaude.Text = dadosTela.TxtSaude;
-            this.vlDinheiro.Text = dadosTela.TxtDinheiro;
+            this.vlCarisma.Text = Convert.ToString(dadosTela.TxtCarisma);
+            this.vlInteligencia.Text = Convert.ToString(dadosTela.TxtInteligencia);
+            this.vlResistencia.Text = Convert.ToString(dadosTela.TxtResistencia);
+            this.vlForca.Text = Convert.ToString(dadosTela.TxtForca);
+            this.vlSabedoria.Text = Convert.ToString(dadosTela.TxtSabedoria);
+            this.vlAgilidade.Text = Convert.ToString(dadosTela.TxtAgilidade);
+            this.vlSaude.Text = Convert.ToString(dadosTela.TxtSaude);
+            this.vlDinheiro.Text = Convert.ToString(dadosTela.TxtDinheiro);
 
             this.btMenu.Visible = dadosTela.EstadoBtMenu;
             this.btOp1.Visible = dadosTela.EstadoBtOp1;
@@ -72,6 +72,8 @@ namespace Adventure.Telas
             btOp3.FlatAppearance.MouseDownBackColor = Color.Transparent;
             btOp3.FlatAppearance.MouseOverBackColor = Color.Transparent;
             btOp3.BackColor = Color.Transparent;
+
+            this.textoDesc.Padding = new Padding(20, 20, 0, 0);
         }
 
         private void label1_Click(object sender, EventArgs e)
