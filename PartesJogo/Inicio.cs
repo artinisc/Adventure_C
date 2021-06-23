@@ -56,7 +56,7 @@ namespace Adventure.PartesJogo
             Console.ReadLine();
             Console.Clear();
 
-            if (personagem.escolhas.RecebeuInformacoesLaboratorio == true)
+            if (personagem.Escolhas.RecebeuInformacoesLaboratorio == true)
             {
                 if (personagem.getClasse().Nome == "Guerreiro")
                 {

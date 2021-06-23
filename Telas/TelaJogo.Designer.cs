@@ -43,6 +43,7 @@ namespace Adventure.Telas
             this.vlSabedoria = new System.Windows.Forms.Label();
             this.vlAgilidade = new System.Windows.Forms.Label();
             this.vlDinheiro = new System.Windows.Forms.Label();
+            this.btAvancar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btOp1
@@ -55,6 +56,7 @@ namespace Adventure.Telas
             this.btOp1.TabIndex = 0;
             this.btOp1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOp1.UseVisualStyleBackColor = false;
+            this.btOp1.Click += new System.EventHandler(this.btOp1_Click);
             // 
             // btOp2
             // 
@@ -66,6 +68,7 @@ namespace Adventure.Telas
             this.btOp2.TabIndex = 1;
             this.btOp2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOp2.UseVisualStyleBackColor = false;
+            this.btOp2.Click += new System.EventHandler(this.btOp2_Click);
             // 
             // btOp3
             // 
@@ -77,11 +80,12 @@ namespace Adventure.Telas
             this.btOp3.TabIndex = 2;
             this.btOp3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btOp3.UseVisualStyleBackColor = false;
+            this.btOp3.Click += new System.EventHandler(this.btOp3_Click);
             // 
             // btMenu
             // 
             this.btMenu.BackColor = System.Drawing.Color.Black;
-            this.btMenu.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btMenu.Font = new System.Drawing.Font("Times New Roman", 15.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btMenu.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btMenu.Location = new System.Drawing.Point(880, 12);
             this.btMenu.Name = "btMenu";
@@ -89,6 +93,7 @@ namespace Adventure.Telas
             this.btMenu.TabIndex = 3;
             this.btMenu.Text = "Sair";
             this.btMenu.UseVisualStyleBackColor = false;
+            this.btMenu.Click += new System.EventHandler(this.btMenu_Click);
             // 
             // textoDesc
             // 
@@ -187,9 +192,23 @@ namespace Adventure.Telas
             this.vlDinheiro.Size = new System.Drawing.Size(50, 40);
             this.vlDinheiro.TabIndex = 13;
             // 
+            // btAvancar
+            // 
+            this.btAvancar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btAvancar.Font = new System.Drawing.Font("Times New Roman", 15.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btAvancar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btAvancar.Location = new System.Drawing.Point(880, 661);
+            this.btAvancar.Name = "btAvancar";
+            this.btAvancar.Size = new System.Drawing.Size(114, 48);
+            this.btAvancar.TabIndex = 14;
+            this.btAvancar.Text = "Avancar";
+            this.btAvancar.UseVisualStyleBackColor = false;
+            this.btAvancar.Click += new System.EventHandler(this.btAvancar_Click);
+            // 
             // TelaJogo
             // 
             this.ClientSize = new System.Drawing.Size(1006, 721);
+            this.Controls.Add(this.btAvancar);
             this.Controls.Add(this.vlDinheiro);
             this.Controls.Add(this.vlAgilidade);
             this.Controls.Add(this.vlSabedoria);
@@ -226,5 +245,6 @@ namespace Adventure.Telas
         private System.Windows.Forms.Label vlSabedoria;
         private System.Windows.Forms.Label vlAgilidade;
         private System.Windows.Forms.Label vlDinheiro;
+        private System.Windows.Forms.Button btAvancar;
     }
 }

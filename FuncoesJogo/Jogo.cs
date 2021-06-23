@@ -12,10 +12,13 @@ namespace Adventure.Estrutura
 {
     public class Jogo
     {
+        #region Objetos
         Personagem personagem = new Personagem();
         public int resposta = 0;
         Boolean avanca = false;
+        #endregion
 
+        #region Jogo
         public void Inicia()
         {
            
@@ -37,6 +40,7 @@ namespace Adventure.Estrutura
         {
             CriaPersonagem criaP = new CriaPersonagem();
             personagem = criaP.criarP();
+            personagem.defineAtributos();
 
             TelaNovoP telaNovoP = new TelaNovoP();
             Application.Run(telaNovoP);
@@ -65,7 +69,7 @@ namespace Adventure.Estrutura
 
         public void Jogar()
         {
-            switch (personagem.etapa)
+            switch (personagem.Etapa)
             {
                 case "prologo":
                     etapaPrologo();
@@ -78,26 +82,30 @@ namespace Adventure.Estrutura
                     break;
             }
         }
+        #endregion
 
+        #region Prologo
         public void etapaPrologo()
         {
             Prologo prologo = new Prologo();
             personagem = prologo.cap1(personagem);
 
-            switch (prologo.resposta)
+            switch (prologo.Resposta)
             {
-                case 1:
-                    Jogar();
-                    break;
-                case 2:
+                case 0:
                     Inicia();
                     break;
-                case 3:
+                case 9:
                     FimJogo();
+                    break;
+                default:
+                    Jogar();
                     break;
             }  
         }
+        #endregion
 
+        #region Inicio
         public void etapaInicio()
         {
             Inicio inicio = new Inicio();
@@ -105,18 +113,18 @@ namespace Adventure.Estrutura
 
             switch (inicio.resposta)
             {
-                case 1:
-                    Jogar();
-                    break;
-                case 2:
+                case 0:
                     Inicia();
                     break;
-                case 3:
+                case 9:
                     FimJogo();
+                    break;
+                default:
+                    Jogar();
                     break;
             }
         }
-
+        
         public void etapaPrimeirasDescobertas()
         {
             Inicio inicio = new Inicio();
@@ -124,20 +132,17 @@ namespace Adventure.Estrutura
 
             switch (inicio.resposta)
             {
-                case 1:
-                    Jogar();
-                    break;
-                case 2:
+                case 0:
                     Inicia();
                     break;
-                case 3:
+                case 9:
                     FimJogo();
+                    break;
+                default:
+                    Jogar();
                     break;
             }
         }
+        #endregion
     }
-
-    
-
-
 }

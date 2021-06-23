@@ -22,19 +22,20 @@ namespace Adventure.Estrutura
         public float VitalidadeBase { get; set; }
         public int Forca { get; set; }
         public int Magia { get; set; }
-        public int Velocidade { get; set; }
-        public int Vitalidade { get; set; }
-        public int VitalidadeAtual { get; set; }
-        public int ultimaR { get; set; }
-        public bool estado { get; set; }
-        public string etapa { get; set; }
+        public int Agilidade { get; set; }
+        public int Saude { get; set; }
+        public int SaudeAtual { get; set; }
+        public int Dinheiro { get; set; }
+        public int UltimaR { get; set; }
+        public bool Estado { get; set; }
+        public string Etapa { get; set; }
 
-        public Decisao escolhas = new Decisao();
-        private Classe classe = new Classe();
+        public Decisao Escolhas = new Decisao();
+        private Classe Classe = new Classe();
 
         public Classe getClasse()
         {
-            return this.classe;
+            return this.Classe;
         }
 
         public string setClasse(Classe classeP)
@@ -49,7 +50,7 @@ namespace Adventure.Estrutura
             {
                 if (classeP.Nome.Equals(C.Nome))
                 {
-                    this.classe = classeP;
+                    this.Classe = classeP;
                     erro = "sucesso";
                 }
             }
@@ -59,22 +60,22 @@ namespace Adventure.Estrutura
 
         public void defineAtributos()
         {
-            this.Carisma = Convert.ToInt32(this.CarismaBase * this.classe.BonusCarisma);
-            this.Inteligencia = Convert.ToInt32(this.InteligenciaBase * this.classe.BonusInteligencia);
-            this.Restencia = Convert.ToInt32(this.RestenciaBase * this.classe.BonusRestencia);
-            this.Forca = Convert.ToInt32(this.ForcaBase * this.classe.BonusForca + (this.Restencia * 0.3f));
-            this.Magia = Convert.ToInt32(this.MagiaBase * this.classe.BonusMagia + (this.Inteligencia * 0.3f));
-            this.Velocidade = Convert.ToInt32(this.VelocidadeBase * this.classe.BonusVelocidade + (this.Carisma * 0.3f));
-            this.Vitalidade = Convert.ToInt32(this.VitalidadeBase * this.classe.BonusVitalidade + (this.Restencia * 0.1f) + (this.Inteligencia * 0.1f) + (this.Carisma * 0.1f));
-            this.VitalidadeAtual = this.Vitalidade;
+            this.Carisma = Convert.ToInt32(this.CarismaBase * this.Classe.BonusCarisma);
+            this.Inteligencia = Convert.ToInt32(this.InteligenciaBase * this.Classe.BonusInteligencia);
+            this.Restencia = Convert.ToInt32(this.RestenciaBase * this.Classe.BonusRestencia);
+            this.Forca = Convert.ToInt32(this.ForcaBase * this.Classe.BonusForca + (this.Restencia * 0.3f));
+            this.Magia = Convert.ToInt32(this.MagiaBase * this.Classe.BonusMagia + (this.Inteligencia * 0.3f));
+            this.Agilidade = Convert.ToInt32(this.VelocidadeBase * this.Classe.BonusVelocidade + (this.Carisma * 0.3f));
+            this.Saude = Convert.ToInt32(this.VitalidadeBase * this.Classe.BonusVitalidade + (this.Restencia * 0.1f) + (this.Inteligencia * 0.1f) + (this.Carisma * 0.1f));
+            this.SaudeAtual = this.Saude;
         }
 
         public void calculaVitalidade(int valor)
         {
-            this.VitalidadeAtual = +valor;
-            if (this.VitalidadeAtual > this.Vitalidade)
+            this.SaudeAtual = +valor;
+            if (this.SaudeAtual > this.Saude)
             {
-                this.VitalidadeAtual = this.Vitalidade;
+                this.SaudeAtual = this.Saude;
             }
         }
     }

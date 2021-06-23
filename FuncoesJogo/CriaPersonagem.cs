@@ -25,8 +25,9 @@ namespace Adventure.FuncoesJogo
             personagem.MagiaBase = 10;
             personagem.VelocidadeBase = 10;
             personagem.VitalidadeBase = 50;
-            personagem.estado = true;
-            personagem.etapa = "prologo";
+            personagem.Dinheiro = 0;
+            personagem.Estado = true;
+            personagem.Etapa = "prologo";
 
             return personagem;
         }
