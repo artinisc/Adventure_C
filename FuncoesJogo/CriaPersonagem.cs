@@ -32,70 +32,18 @@ namespace Adventure.FuncoesJogo
             return personagem;
         }
 
-        public Personagem escolherC(Personagem personagem)
+        public Personagem escolherC(Personagem personagem, string nome)
         {
-
-            //estrutura
             List<Classe> classes = new List<Classe>();
             Classe classe = new Classe();
 
-            //verificadores
-            Boolean verifica = false;
-            int recebeEntrada = 0;
-            string retorno = "";
-            int contC = 0;
-
             classes = classe.criaClasses();
 
-            //seta a classe do personagem
-            Console.Clear();
-            Console.WriteLine("Escolha sua classe:\n");
-            contC = 0;
-            foreach (Classe C in classes)
-            {
-                contC++;
-                Console.WriteLine("Digite " + contC + " para " + C.Nome + "\n");
-            }
-            try { recebeEntrada = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-            recebeEntrada--;
+            classe = classes.Where(f => f.Nome.Equals(nome)).FirstOrDefault();
 
-            do
-            {
-                try
-                {
-                    retorno = personagem.setClasse(classes[recebeEntrada]);
-
-                    if (retorno.Equals("sucesso"))
-                    {
-                        verifica = true;
-                    }
-                    else
-                    {
-                        verifica = false;
-                    }
-                }
-                catch (Exception ex) { };
-
-                if (verifica == false)
-                {
-                    //Console.Clear();
-                    Console.WriteLine("Opção Invalida! Escolha outra opção para selecionar sua classe:\n");
-                    contC = 0;
-                    foreach (Classe C in classes)
-                    {
-                        contC++;
-                        Console.WriteLine("Digite " + contC + " para " + C.Nome + "\n");
-                    }
-                    try { recebeEntrada = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                    recebeEntrada--;
-                }
-            } while (verifica == false);
-
-            classe = personagem.getClasse();
+            personagem.setClasse(classe);
 
             personagem.defineAtributos();
-
-            Console.Clear();
 
             return personagem;
         }

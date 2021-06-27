@@ -77,8 +77,8 @@ namespace Adventure.Estrutura
                 case "inicio":
                     etapaInicio();
                     break;
-                case "primeirasDescobertas":
-                    etapaPrimeirasDescobertas();
+                case "fim":
+                    FimJogo();
                     break;
             }
         }
@@ -95,9 +95,6 @@ namespace Adventure.Estrutura
                 case 0:
                     Inicia();
                     break;
-                case 9:
-                    FimJogo();
-                    break;
                 default:
                     Jogar();
                     break;
@@ -111,26 +108,7 @@ namespace Adventure.Estrutura
             Inicio inicio = new Inicio();
             personagem = inicio.cap1(personagem);
 
-            switch (inicio.resposta)
-            {
-                case 0:
-                    Inicia();
-                    break;
-                case 9:
-                    FimJogo();
-                    break;
-                default:
-                    Jogar();
-                    break;
-            }
-        }
-        
-        public void etapaPrimeirasDescobertas()
-        {
-            Inicio inicio = new Inicio();
-            personagem = inicio.cap2(personagem);
-
-            switch (inicio.resposta)
+            switch (inicio.Resposta)
             {
                 case 0:
                     Inicia();

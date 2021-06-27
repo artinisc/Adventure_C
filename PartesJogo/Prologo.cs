@@ -19,25 +19,26 @@ namespace Adventure.PartesJogo
 
             Tela1(personagem);
 
-            if (this.Resposta != 0 && this.Resposta != 9)
+            if (this.Resposta != 0 && personagem.Estado == true)
             {
                 switch (Resposta)
                 {
                     case 1:
                         personagem.Escolhas.RecebeuInformacoesLaboratorio = true;
                         Tela2R1(personagem);
+                        personagem.Etapa = "inicio";
                         break;
                     case 2:
-                        //Jogar();
+                        Tela2R2(personagem);
+                        personagem.Etapa = "inicio";
                         break;
                     case 3:
-                        //FimJogo();
+                        Tela2R3(personagem);
+                        personagem.Etapa = "fim";
+                        personagem.Estado = false;
                         break;
                 }
             }
-            
-
-            
             return personagem;
         }
         #endregion
@@ -76,20 +77,11 @@ namespace Adventure.PartesJogo
                 TxtBtOp3 = "Gritar e sair correndo...",
                 TxtTxtDesc = new List<string>() 
                 {
-                    //      Limites linha 1/7                  //
                     "O dia é 6 de agosto de 1945...\n" +
-                    //           Limites  linha 2/6               //
                      "Voce caminha tranquilamento pelos corredores \n"+
-                    //           Limites  linha 3/6               //
                      "do Instituto Nacional de Pesquisas Energeticas \n"+
-                    //           Limites  linha 4/6               //
                      "de Hiroshima no Japão.\n" +
-                    //           Limites  linha 5/6               //
-                     "Dr." + personagem.Nome + " espere!\n"+
-                    //           Limites  linha 6/6              //
-                     "\n"+
-                     //           Limites  linha 7/7            //
-                     ""
+                     "Dr." + personagem.Nome + " espere!\n"
                 },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,
@@ -108,6 +100,7 @@ namespace Adventure.PartesJogo
         }
         #endregion
 
+        #region Resposta 1
         public void Tela2R1(Personagem personagem)
         {
             DadosTelaJogo dadosTela = new DadosTelaJogo()
@@ -145,45 +138,49 @@ namespace Adventure.PartesJogo
                 TxtBtOp3 = "",
                 TxtTxtDesc = new List<string>()
                 {
-                    //      Limites linha 1/7                  //
                     "Voce vira e ve uma jovem garota vindo em \n" +
-                    //           Limites  linha 2/7               //
                      "sua direção...\n"+
-                    //           Limites  linha 3/7               //
                      "Professor que bom que encontrei o senhor!\n" +
-                    //           Limites  linha 4/7               //
                      "O general Yamamoto veio essa manhã ao \n"+
-                    //           Limites  linha 5/7               //
                      "laboratorio com um artefato bastante \n" +
-                    //           Limites  linha 6/7              //
-                     "interessante.\n"+
-                     //           Limites  linha 7/7            //
-                     " "
+                     "interessante.\n"
                     ,
-                    //      Limites linha 1/7                 //
                     "Acredito que pode ajudar em muito nossa \n" +
-                    //           Limites  linha 2/7               //
                      "pesquisa com super condutores...\n"
                     ,
-                    "Segundo ele o artefato foi recuperado de um navio da marinha americana vindo do pacifico sul, proximo a Antartida.\n"+
-                    "Fiz alguns testes iniciais e ao dar uma discarga eletrica o objeto manteve a corrente eletrica circulando ao seu redor,"+
-                    "aparentemente sem perdas, como se estivesse suspença por alguma força eletromagnetica.\n"+
-                    "Enfim, bom proveito, vou levar o relatorio até a direção."
+                    "Segundo ele o artefato foi recuperado de um \n" +
+                     "navio da marinha americana vindo do pacifico\n"+
+                     "sul, proximo a Antartida.\n" +
+                     "Fiz alguns testes iniciais e ao dar uma discarga\n"+
+                     "eletrica o objeto manteve a corrente eletrica \n" +
+                     "circulando ao seu redor, aparentemente sem\n"
+                     ,
+                    " perdas, como se estivesse suspença por \n" +
+                     "alguma força eletromagnetica.\n"+
+                     "Enfim, bom proveito, vou levar o relatorio \n" +
+                     "até a direção.\n"
                     ,
                     "img"
                     ,
-                    "Voce segue ao laboratorio, e ve sobre a mesa de testes uma esfera flutuando e rodeada por uma corrente eletrica.\n"+
-                    "Ao me aproximar percebo que éla parece feita em um materia metalico,"+
-                    "porem diferente dos que conhesso, este é um pouco fosco,"+
-                    "como se tivesse um fino revestimento ceramico.\n"+
-                    "Porem voce não consegue observar por muito tempo...\n"
+                    "Voce segue ao laboratorio, e ve sobre a mesa\n" +
+                     "de testes uma esfera flutuando e rodeada por\n"+
+                     "uma corrente eletrica.\n" +
+                     "Ao me aproximar percebo que éla parece feita\n"+
+                     "em um materia metalico, porem diferente dos \n" +
+                     "que conhesso, este é um pouco fosco, como se \n"+
+                     " tivesse um fino revestimento ceramico."
+                    ,
+                    "Porem voce não consegue observar por\n" +
+                     "muito tempo...\n"
                     ,
                     "img"
                     ,
-                    "Repentinamente o objeto começa a emitir um som metalico e a sala é tomada por um clarão ofuscante!"+
-                    "Por um momento tudo fica escuro e voce sente como se estivece girando pelo ar e é tomado por uma forte nausea."
-                    ,
-                    "Fim"
+                    "Repentinamente o objeto começa a emitir um \n" +
+                     "som metalico e a sala é tomada por um clarão\n"+
+                     "ofuscante!\n" +
+                     "Por um momento tudo fica escuro e voce sente \n"+
+                     "como se estivece girando pelo ar e é tomado\n" +
+                     "por uma forte nausea.\n"
                 },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,
@@ -197,44 +194,127 @@ namespace Adventure.PartesJogo
 
             TelaJogo tela = new TelaJogo(dadosTela);
             Application.Run(tela);
-
-            this.Resposta = tela.Resposta;
         }
 
-/*
+        //personagem.ultimaR = 1;
 
-        
-        personagem.estado = true;
-        personagem.ultimaR = 1;
-        "\n\n\nPrecione qualquer tecla para continuar...");
-        Console.ReadLine();
-        break;
+        public void Tela2R2(Personagem personagem)
+        {
+            DadosTelaJogo dadosTela = new DadosTelaJogo()
+            {
+                EstadoBtAvancar = true,
+                EstadoBtOp1 = false,
+                EstadoBtOp2 = false,
+                EstadoBtOp3 = false,
+                EstadoBtMenu = true,
+                EstadoTxtDesc = true,
+                EstadoPainelStat = true,
+                EstadoCarisma = true,
+                EstadoInteligencia = true,
+                EstadoResistencia = true,
+                EstadoForca = true,
+                EstadoSabedoria = true,
+                EstadoAgilidade = true,
+                EstadoSaude = true,
+                EstadoDinheiro = true,
+                ImgFundo = new List<string>()
+                {
+                    @"Prologo\Corredor.jpg"
+                    ,
+                    @"Prologo\Fundo_Basico.jpg"
+                    ,
+                    @"Prologo\Corredor.jpg"
+                },
+                ImgBtOp1 = @"Genericas\Fundo_Op.png",
+                ImgBtOp2 = @"Genericas\Fundo_Op.png",
+                ImgBtOp3 = @"Genericas\Fundo_Op.png",
+                ImgTxtDesc = @"Genericas\FundoText.png",
+                ImgPainelStat = @"Genericas\Painel_Stat.jpg",
+                TxtBtOp1 = "",
+                TxtBtOp2 = "",
+                TxtBtOp3 = "",
+                TxtTxtDesc = new List<string>()
+                {
+                    "Voce chega ao seu laboratorio e inicia os \n" +
+                     "preparativos para dar continuidade nos testes \n"+
+                     "de materiais supercondutores...\n" +
+                     "Escuta um som metalico e ao se virar é \n"+
+                     "surpreendido por um clarão ofuscante!\n" +
+                     "Por um momento tudo fica escuro e voce sente \n"+
+                     " um forte nausea."
+                },
+                TxtCarisma = personagem.Carisma,
+                TxtInteligencia = personagem.Inteligencia,
+                TxtResistencia = personagem.Restencia,
+                TxtForca = personagem.Forca,
+                TxtSabedoria = personagem.Magia,
+                TxtAgilidade = personagem.Agilidade,
+                TxtSaude = personagem.Saude,
+                TxtDinheiro = personagem.Dinheiro
+            };
 
+            TelaJogo tela = new TelaJogo(dadosTela);
+            Application.Run(tela);
+        }
 
+        public void Tela2R3(Personagem personagem)
+        {
+            DadosTelaJogo dadosTela = new DadosTelaJogo()
+            {
+                EstadoBtAvancar = true,
+                EstadoBtOp1 = false,
+                EstadoBtOp2 = false,
+                EstadoBtOp3 = false,
+                EstadoBtMenu = true,
+                EstadoTxtDesc = true,
+                EstadoPainelStat = true,
+                EstadoCarisma = true,
+                EstadoInteligencia = true,
+                EstadoResistencia = true,
+                EstadoForca = true,
+                EstadoSabedoria = true,
+                EstadoAgilidade = true,
+                EstadoSaude = true,
+                EstadoDinheiro = true,
+                ImgFundo = new List<string>()
+                {
+                    @"Prologo\Corredor.jpg"
+                    ,
+                    @"Prologo\Fundo_Basico.jpg"
+                    ,
+                    @"Prologo\Corredor.jpg"
+                },
+                ImgBtOp1 = @"Genericas\Fundo_Op.png",
+                ImgBtOp2 = @"Genericas\Fundo_Op.png",
+                ImgBtOp3 = @"Genericas\Fundo_Op.png",
+                ImgTxtDesc = @"Genericas\FundoText.png",
+                ImgPainelStat = @"Genericas\Painel_Stat.jpg",
+                TxtBtOp1 = "",
+                TxtBtOp2 = "",
+                TxtBtOp3 = "",
+                TxtTxtDesc = new List<string>()
+                {
+                    "Voce anda sem rumo pelos corredores e...\n" +
+                     "\n"+
+                     "Ve um clarão ofuscante!\n" +
+                     "\n"+
+                     "Logo tudo fica escuro e voce perde a conciencia... \n" +
+                     "É o fim...\n"
+                },
+                TxtCarisma = personagem.Carisma,
+                TxtInteligencia = personagem.Inteligencia,
+                TxtResistencia = personagem.Restencia,
+                TxtForca = personagem.Forca,
+                TxtSabedoria = personagem.Magia,
+                TxtAgilidade = personagem.Agilidade,
+                TxtSaude = personagem.Saude,
+                TxtDinheiro = personagem.Dinheiro
+            };
 
+            TelaJogo tela = new TelaJogo(dadosTela);
+            Application.Run(tela);
+        }
+        #endregion
 
-    case 2:
-        Console.Clear();
-        //inf.infP(personagem);
-        "Voce chega ao seu laboratorio e inicia os preparativos para dar continuidade nos testes de materiais supercondutores...");
-        "Escuta um som metalico e ao se virar é surpreendido por um clarão ofuscante!");
-        "Por um momento tudo fica escuro e voce sente um forte nausea");
-        personagem.estado = true;
-        personagem.ultimaR = 2;
-        "\n\n\nPrecione qualquer tecla para continuar...");
-        Console.ReadLine();
-        break;
-    case 3:
-        Console.Clear();
-        //inf.infP(personagem);
-        "Voce anda sem rumo pelos corredores e...");
-        "Ve um clarão ofuscante!");
-        "Logo tudo fica escuro e voce perde a conciencia... É o fim...");
-        personagem.estado = false;
-        "\n\n\nPrecione qualquer tecla para continuar...");
-        Console.ReadLine();
-        break;
-}
-*/
     }
 }

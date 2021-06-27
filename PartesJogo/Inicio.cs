@@ -1,215 +1,389 @@
 ﻿using Adventure.Estrutura;
 using Adventure.FuncoesJogo;
+using Adventure.Telas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Adventure.PartesJogo
 {
     public class Inicio
     {
-        public int resposta { get; set; }
+        public int Resposta { get; set; }
+
+        #region Controle
         public Personagem cap1(Personagem personagem)
         {
+            CriaPersonagem criar = new CriaPersonagem();
 
-            CriaPersonagem criacao = new CriaPersonagem();
-            //Informacoes inf = new Informacoes();
-            Boolean avanca = false;
+            Tela1(personagem);
 
-            Console.Clear();
-            //inf.infP(personagem);
-            Console.WriteLine("CAPITULO I - UMA JORNADA INESPERADA\n\n");
-            Console.WriteLine("Felismente essa sensação estranha logo passa, as coisas parecem estar se estabilizando.");
-            Console.WriteLine("Para um laboratorio voce sente uma estranha brisa que carrega com sigo um cheiro fresco do orvalho da manhã...");
-            Console.WriteLine("Aos poucos sua visão vai ficando mais clara e!!!");
-            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-            Console.ReadLine();
-            Console.Clear();
-            //inf.infP(personagem);
-            Console.WriteLine("QUE!!! ONDE ESTOU!!!");
-            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-            Console.ReadLine();
-            Console.Clear();
-            //inf.infP(personagem);
-            Console.WriteLine("Voce se ve no que parece ser o topo de uma montanha,");
-            Console.WriteLine("e logo percebe que voce não esta com suas roupas tão pouco se parece com voce mesmo!.");
-            Console.WriteLine("Estou vestido como um...");
-            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-            Console.ReadLine();
-            Console.Clear();
-            //inf.infP(personagem);
+            if (this.Resposta != 0 && personagem.Estado == true)
+            {
+                TelaEscolheClasse(personagem);
+            }
 
-            personagem = criacao.escolherC(personagem);
+            switch (Resposta)
+            {
+                case 1:
+                    personagem = criar.escolherC(personagem, "Guerreiro");
+                    break;
+                case 2:
+                    personagem = criar.escolherC(personagem, "Mago");
+                    break;
+                case 3:
+                    personagem = criar.escolherC(personagem, "Arqueiro");
+                    break;
+            }
 
-            Console.Clear();
-            //inf.infPC(personagem, personagem.getClasse());
-            Console.WriteLine("Parabens! Voce acabou de selecionar sua classe.");
-            Console.WriteLine("Conforme o decorrer do jogo voce vai se deparar com situações e escolhas.");
-            Console.WriteLine("Escolha com sabedoria, pois o rumo do jogo pode ser alterado drasticamente conforme sua decisão.");
-            Console.WriteLine("Apos algumas decisões e etapas do jogo voce tambem recebera rescompensas");
-            Console.WriteLine("e muitas veses podera escolher entre algumas opções,");
-            Console.WriteLine("podendo variar entre atributos para o seu personagem, equipamentos, entre outros.");
-            Console.WriteLine("A seguir voce tera sua primeira escolha de recompensas.");
-            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-            Console.ReadLine();
-            Console.Clear();
+            if(this.Resposta != 0 && personagem.Estado == true)
+            {
+                Tela2(personagem);
+            }
+
+            if (this.Resposta != 0 && personagem.Estado == true)
+            {
+                TelaRecompensa1(personagem);
+            }
+
+            if (this.Resposta != 0 && personagem.Estado == true)
+            {
+                Tela3(personagem);
+            }
+
+            return personagem; 
+        }
+        #endregion
+
+        #region Tela1
+        public void Tela1(Personagem personagem)
+        {
+            DadosTelaJogo dadosTela = new DadosTelaJogo()
+            {
+                EstadoBtAvancar = false,
+                EstadoBtOp1 = true,
+                EstadoBtOp2 = true,
+                EstadoBtOp3 = true,
+                EstadoBtMenu = true,
+                EstadoTxtDesc = true,
+                EstadoPainelStat = true,
+                EstadoCarisma = true,
+                EstadoInteligencia = true,
+                EstadoResistencia = true,
+                EstadoForca = true,
+                EstadoSabedoria = true,
+                EstadoAgilidade = true,
+                EstadoSaude = true,
+                EstadoDinheiro = true,
+                ImgFundo = new List<string>()
+                {
+                    @"Prologo\Corredor.jpg"
+                },
+                ImgBtOp1 = @"Genericas\Fundo_Op.png",
+                ImgBtOp2 = @"Genericas\Fundo_Op.png",
+                ImgBtOp3 = @"Genericas\Fundo_Op.png",
+                ImgTxtDesc = @"Genericas\FundoText.png",
+                ImgPainelStat = @"Genericas\Painel_Stat.jpg",
+                TxtBtOp1 = "Olhar para traz",
+                TxtBtOp2 = "Continuar ao laboratorio",
+                TxtBtOp3 = "Gritar e sair correndo...",
+                TxtTxtDesc = new List<string>()
+                {
+                    "Felismente essa sensação estranha logo passa, \n" +
+                     "as coisas parecem estar se estabilizando.\n"+
+                     "Para um laboratorio voce sente uma estranha \n"+
+                     "brisa que carrega com sigo um cheiro fresco \n" +
+                     "do orvalho da manhã...\n"+
+                     "Aos poucos sua visão vai ficando mais clara e!!!\n"
+                    ,
+                    "img"
+                    ,
+                    "QUE!!! ONDE ESTOU!!!\n" +
+                     "Voce se ve no que parece ser o topo de uma \n"+
+                     "montanha, e logo percebe que voce não esta com \n"+
+                     "suas roupas tão pouco se parece com voce mesmo!\n" +
+                     "Estou vestido como um...\n"
+                },
+                TxtCarisma = personagem.Carisma,
+                TxtInteligencia = personagem.Inteligencia,
+                TxtResistencia = personagem.Restencia,
+                TxtForca = personagem.Forca,
+                TxtSabedoria = personagem.Magia,
+                TxtAgilidade = personagem.Agilidade,
+                TxtSaude = personagem.Saude,
+                TxtDinheiro = personagem.Dinheiro
+            };
+
+            TelaJogo tela = new TelaJogo(dadosTela);
+            Application.Run(tela);
+        }
+        #endregion
+
+        #region Tela Escolha de Classe
+        public void TelaEscolheClasse(Personagem personagem)
+        {
+            TelaNovaC tela = new TelaNovaC();
+            Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
+        }
+        #endregion
+
+        #region Tela2
+        public void Tela2(Personagem personagem)
+        {
+            DadosTelaJogo dadosTela = new DadosTelaJogo()
+            {
+                EstadoBtAvancar = false,
+                EstadoBtOp1 = true,
+                EstadoBtOp2 = true,
+                EstadoBtOp3 = true,
+                EstadoBtMenu = true,
+                EstadoTxtDesc = true,
+                EstadoPainelStat = true,
+                EstadoCarisma = true,
+                EstadoInteligencia = true,
+                EstadoResistencia = true,
+                EstadoForca = true,
+                EstadoSabedoria = true,
+                EstadoAgilidade = true,
+                EstadoSaude = true,
+                EstadoDinheiro = true,
+                ImgFundo = new List<string>()
+                {
+                    @"Prologo\Corredor.jpg"
+                },
+                ImgBtOp1 = @"Genericas\Fundo_Op.png",
+                ImgBtOp2 = @"Genericas\Fundo_Op.png",
+                ImgBtOp3 = @"Genericas\Fundo_Op.png",
+                ImgTxtDesc = @"Genericas\FundoText.png",
+                ImgPainelStat = @"Genericas\Painel_Stat.jpg",
+                TxtBtOp1 = "Olhar para traz",
+                TxtBtOp2 = "Continuar ao laboratorio",
+                TxtBtOp3 = "Gritar e sair correndo...",
+                TxtTxtDesc = new List<string>()
+                {
+                    "Parabens! Voce acabou de selecionar sua classe.\n" +
+                     "Conforme o decorrer do jogo voce vai se deparar \n"+
+                     "com situações e escolhas.\n" +
+                     "Escolha com sabedoria, pois o rumo do jogo pode \n"+
+                     "ser alterado drasticamente conforme sua decisão.\n"
+                    ,
+                    "Apos algumas decisões e etapas do jogo voce \n" +
+                     "tambem recebera rescompensas e muitas veses \n"+
+                     "podera escolher entre algumas opções, podendo \n" +
+                     "variar entre atributos para o seu personagem, \n"+
+                     "equipamentos, entre outros.\n" +
+                     "A seguir voce tera sua primeira escolha de\n"+
+                     "   recompensas."
+        },
+                TxtCarisma = personagem.Carisma,
+                TxtInteligencia = personagem.Inteligencia,
+                TxtResistencia = personagem.Restencia,
+                TxtForca = personagem.Forca,
+                TxtSabedoria = personagem.Magia,
+                TxtAgilidade = personagem.Agilidade,
+                TxtSaude = personagem.Saude,
+                TxtDinheiro = personagem.Dinheiro
+            };
+
+            TelaJogo tela = new TelaJogo(dadosTela);
+            Application.Run(tela);
+        }
+        #endregion
+
+        #region Tela Recompensa 1
+        public void TelaRecompensa1(Personagem personagem)
+        {
+            DadosTelaRecompensa dadosRecompensa = new DadosTelaRecompensa()
+            {
+                EstadoBt1 = true,
+                EstadoBt2 = true,
+                EstadoBt3 = true,
+                EstadoDesc1 = false,
+                EstadoDesc2 = false,
+                EstadoDesc3 = false,
+                txtBt1 = "",
+                txtBt2 = "",
+                txtBt3 = "",
+                txtDesc1 = "",
+                txtDesc2 = "",
+                txtDesc3 = ""
+            };
 
             if (personagem.Escolhas.RecebeuInformacoesLaboratorio == true)
             {
                 if (personagem.getClasse().Nome == "Guerreiro")
                 {
-                    Console.Clear();
-                    //inf.infPC(personagem, personagem.getClasse());
-                    Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Força \n 2 Para +5 Resistencia\n 3 Para Investida (Libera tecnica que permite avançar contra o oponente causando dano com probabilidade de derrubar)");
-                    try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                    do
-                    {
-                        if (resposta == 1 || resposta == 2 || resposta == 3)
-                        {
-                            avanca = true;
-                            switch (resposta)
-                            {
-                                case 1:
-                                    personagem.ForcaBase = +5;
-                                    break;
-                                case 2:
-                                    personagem.RestenciaBase = +5;
-                                    break;
-                                case 3:
-                                    personagem.getClasse().PoderPrincipal = "Investida";
-                                    break;
-                            }
-                            personagem.defineAtributos();
-                        }
-                        else
-                        {
-                            Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                            try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                        }
-                    } while (avanca == false);
+                    dadosRecompensa.EstadoDesc3 = true;
+                    dadosRecompensa.txtBt1 = "+5 Força";
+                    dadosRecompensa.txtBt2 = "+5 Resistencia";
+                    dadosRecompensa.txtBt3 = "Investida";
+                    dadosRecompensa.txtDesc3 = "Libera tecnica que permite avançar contra o oponente causando dano com probabilidade de derrubar.";
                 }
                 else if (personagem.getClasse().Nome == "Mago")
                 {
-                    Console.Clear();
-                    //inf.infPC(personagem, personagem.getClasse());
-                    Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Magia\n 2 Para +5 Inteligencia\n 3 Para Bola de Fogo (Libera tecnica que permite lançar uma bola de fogo sobre o oponente causando dano com probabilidade de cegueira)");
-                    try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                    do
-                    {
-                        if (resposta == 1 || resposta == 2 || resposta == 3)
-                        {
-                            avanca = true;
-                            switch (resposta)
-                            {
-                                case 1:
-                                    personagem.MagiaBase = +5;
-                                    break;
-                                case 2:
-                                    personagem.InteligenciaBase = +5;
-                                    break;
-                                case 3:
-                                    personagem.getClasse().PoderPrincipal = "Bola de Fogo";
-                                    break;
-                            }
-                            personagem.defineAtributos();
-                        }
-                        else
-                        {
-                            Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                            try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                        }
-                    } while (avanca == false);
+                    dadosRecompensa.EstadoDesc3 = true;
+                    dadosRecompensa.txtBt1 = "+5 Sabedoria";
+                    dadosRecompensa.txtBt2 = "+5 Inteligencia";
+                    dadosRecompensa.txtBt3 = "Bola de Fogo";
+                    dadosRecompensa.txtDesc3 = "Libera tecnica que permite lançar uma bola de fogo sobre o oponente causando dano com probabilidade de cegueira.";
                 }
                 else if (personagem.getClasse().Nome == "Arqueiro")
                 {
-                    Console.Clear();
-                    //inf.infPC(personagem, personagem.getClasse());
-                    Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Velocidade \n 2 Para +5 Carisma\n 3 Para Evadir (Libera tecnica que permite saltar para loge da ameaça esquivando de qualquer ataque com probabilidade de confundir)");
-                    try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                    do
-                    {
-                        if (resposta == 1 || resposta == 2 || resposta == 3)
-                        {
-                            avanca = true;
-                            switch (resposta)
-                            {
-                                case 1:
-                                    personagem.VelocidadeBase = +5;
-                                    break;
-                                case 2:
-                                    personagem.CarismaBase = +5;
-                                    break;
-                                case 3:
-                                    personagem.getClasse().PoderPrincipal = "Evadir";
-                                    break;
-                            }
-                            personagem.defineAtributos();
-                        }
-                        else
-                        {
-                            Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                            try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                        }
-                    } while (avanca == false);
+                    dadosRecompensa.EstadoDesc3 = true;
+                    dadosRecompensa.txtBt1 = "+5 Agilidade";
+                    dadosRecompensa.txtBt2 = "+5 Carisma";
+                    dadosRecompensa.txtBt3 = "Evadir";
+                    dadosRecompensa.txtDesc3 = "Libera tecnica que permite saltar para loge da ameaça esquivando de qualquer ataque com probabilidade de confundir.";
                 }
             }
             else
             {
-                Console.Clear();
-                //inf.infPC(personagem, personagem.getClasse());
-                Console.WriteLine("\n\n\nPrecione: \n 1 Para +5 Inteligencia \n 2 Para +5 Carisma\n 3 Para +5 Resistencia");
-                try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                do
-                {
-                    if (resposta == 1 || resposta == 2 || resposta == 3)
-                    {
-                        avanca = true;
-                        switch (resposta)
-                        {
-                            case 1:
-                                personagem.InteligenciaBase = +5;
-                                break;
-                            case 2:
-                                personagem.CarismaBase = +5;
-                                break;
-                            case 3:
-                                personagem.RestenciaBase = +5;
-                                break;
-                        }
-                        personagem.defineAtributos();
-                    }
-                    else
-                    {
-                        Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                        try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                    }
-                } while (avanca == false);
+                dadosRecompensa.txtBt1 = "+5 Inteligencia";
+                dadosRecompensa.txtBt2 = "+5 Carisma";
+                dadosRecompensa.txtBt3 = "+5 Resistencia";
             }
 
-            return personagem;
+            TelaRecompensa tela = new TelaRecompensa(dadosRecompensa);
+            Application.Run(tela);
+
+            if (personagem.Escolhas.RecebeuInformacoesLaboratorio == true)
+            {
+                if (personagem.getClasse().Nome == "Guerreiro")
+                {
+                    switch (tela.Resposta)
+                    {
+                        case 1:
+                            personagem.ForcaBase = +5;
+                            break;
+                        case 2:
+                            personagem.RestenciaBase = +5;
+                            break;
+                        case 3:
+                            personagem.getClasse().PoderPrincipal = "Investida";
+                            break;
+                    }
+                    personagem.defineAtributos();
+                }
+                else if (personagem.getClasse().Nome == "Mago")
+                {
+                    switch (tela.Resposta)
+                    {
+                        case 1:
+                            personagem.MagiaBase = +5;
+                            break;
+                        case 2:
+                            personagem.InteligenciaBase = +5;
+                            break;
+                        case 3:
+                            personagem.getClasse().PoderPrincipal = "Bola de Fogo";
+                            break;
+                    }
+                    personagem.defineAtributos();
+                }
+                else if (personagem.getClasse().Nome == "Arqueiro")
+                {
+                    switch (tela.Resposta)
+                    {
+                        case 1:
+                            personagem.VelocidadeBase = +5;
+                            break;
+                        case 2:
+                            personagem.CarismaBase = +5;
+                            break;
+                        case 3:
+                            personagem.getClasse().PoderPrincipal = "Evadir";
+                            break;
+                    }
+                    personagem.defineAtributos();
+                }
+            }
+            else
+            {
+                switch (tela.Resposta)
+                {
+                    case 1:
+                        personagem.InteligenciaBase = +5;
+                        break;
+                    case 2:
+                        personagem.CarismaBase = +5;
+                        break;
+                    case 3:
+                        personagem.RestenciaBase = +5;
+                        break;
+                }
+                personagem.defineAtributos();
+            }
         }
+        #endregion
 
-        public Personagem cap2(Personagem personagem)
+        #region Tela3
+        public void Tela3(Personagem personagem)
         {
+            DadosTelaJogo dadosTela = new DadosTelaJogo()
+            {
+                EstadoBtAvancar = false,
+                EstadoBtOp1 = true,
+                EstadoBtOp2 = true,
+                EstadoBtOp3 = true,
+                EstadoBtMenu = true,
+                EstadoTxtDesc = true,
+                EstadoPainelStat = true,
+                EstadoCarisma = true,
+                EstadoInteligencia = true,
+                EstadoResistencia = true,
+                EstadoForca = true,
+                EstadoSabedoria = true,
+                EstadoAgilidade = true,
+                EstadoSaude = true,
+                EstadoDinheiro = true,
+                ImgFundo = new List<string>()
+                {
+                    @"Prologo\Corredor.jpg"
+                },
+                ImgBtOp1 = @"Genericas\Fundo_Op.png",
+                ImgBtOp2 = @"Genericas\Fundo_Op.png",
+                ImgBtOp3 = @"Genericas\Fundo_Op.png",
+                ImgTxtDesc = @"Genericas\FundoText.png",
+                ImgPainelStat = @"Genericas\Painel_Stat.jpg",
+                TxtBtOp1 = "Olhar para traz",
+                TxtBtOp2 = "Continuar ao laboratorio",
+                TxtBtOp3 = "Gritar e sair correndo...",
+                TxtTxtDesc = new List<string>()
+                {
+                    "Voce continua sem entender nada, \n" +
+                     "principalmente por parecer lembrar e fazer \n"+
+                     "coisas as quais nunca fez ou viveu antes.\n" +
+                     "Sua cabeça esta uma confuzão e doi um pouco.\n"+
+                     "Mas antes mesmo de ter tempo para raciocinar \n" +
+                     "sente algo espetar suas costas, e uma voz \n"+
+                     "   aguda gritando:"
+                    ,
+                    "Não se mova e identifique-se!\n" +
+                     "Apesar de a voz falar em um dialeto que voce \n"+
+                     "não conhece, de alguma forma voce entende \n" +
+                     "cada palavra.\n"
+            },
+                TxtCarisma = personagem.Carisma,
+                TxtInteligencia = personagem.Inteligencia,
+                TxtResistencia = personagem.Restencia,
+                TxtForca = personagem.Forca,
+                TxtSabedoria = personagem.Magia,
+                TxtAgilidade = personagem.Agilidade,
+                TxtSaude = personagem.Saude,
+                TxtDinheiro = personagem.Dinheiro
+            };
 
-            CriaPersonagem criacao = new CriaPersonagem();
-            //Informacoes inf = new Informacoes();
-            int resposta = 0;
-            Boolean avanca = false;
-            int nResposta = 0;
+            TelaJogo tela = new TelaJogo(dadosTela);
+            Application.Run(tela);
+        }
+        #endregion
 
-            Console.Clear();
-            //inf.infPC(personagem, personagem.getClasse());
-            Console.WriteLine("CAPITULO I PARTE II - PRIMEIRAS DESCOBERTAS\n\n");
-            Console.WriteLine("Voce continua sem entender nada, principalmente por parecer lembrar e fazer coisas as quais nunca fez ou viveu antes.");
-            Console.WriteLine("Sua cabeça esta uma confuzão e doi um pouco.");
-            Console.WriteLine("Mas antes mesmo de ter tempo para raciocinar sente algo espetar suas costas, e uma voz aguda gritando:");
-            Console.WriteLine("Não se mova e identifique-se!");
-            Console.WriteLine("Apesar de a voz falar em um dialeto que voce não conhece, de alguma forma voce entende cada palavra.");
-            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-            Console.ReadLine();
+        /*
 
             Console.Clear();
             //inf.infPC(personagem, personagem.getClasse());
@@ -274,7 +448,6 @@ namespace Adventure.PartesJogo
                 }
             } while (avanca == false);
 
-            return personagem;
-        }
+         */
     }
 }

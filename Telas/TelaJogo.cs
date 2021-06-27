@@ -136,7 +136,7 @@ namespace Adventure.Telas
                 this.BackgroundImage = Image.FromFile(PastaImagem + this.Imagem[ContImg]);
                 this.textoDesc.Text = this.Texto[ContTexto];
 
-                if (this.Texto[ContTexto + 1] == null)
+                if (this.Texto[ContTexto + 1] == "Fim")
                 {
                     this.btAvancar.Visible = false;
                     this.btOp1.Visible = true;
@@ -149,7 +149,7 @@ namespace Adventure.Telas
             {
                 this.Close();
             }
-            else if (this.Texto[ContTexto + 1] == null)
+            else if (this.Texto[ContTexto + 1] == null || this.Texto[ContTexto + 1].Equals("Fim"))
             {
                 this.textoDesc.Text = this.Texto[ContTexto];
 
