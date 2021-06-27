@@ -162,13 +162,13 @@ namespace Adventure.PartesJogo
                     ,
                     "img"
                     ,
-                    "Voce segue ao laboratorio, e ve sobre a mesa\n" +
-                     "de testes uma esfera flutuando e rodeada por\n"+
-                     "uma corrente eletrica.\n" +
+                    "Voce segue ao laboratorio, e ve sobre a \n" +
+                     "mesa de testes uma esfera flutuando e rodeada \n"+
+                     "por uma corrente eletrica.\n" +
                      "Ao me aproximar percebo que éla parece feita\n"+
                      "em um materia metalico, porem diferente dos \n" +
                      "que conhesso, este é um pouco fosco, como se \n"+
-                     " tivesse um fino revestimento ceramico."
+                     "   tivesse um fino revestimento ceramico."
                     ,
                     "Porem voce não consegue observar por\n" +
                      "muito tempo...\n"
@@ -181,6 +181,8 @@ namespace Adventure.PartesJogo
                      "Por um momento tudo fica escuro e voce sente \n"+
                      "como se estivece girando pelo ar e é tomado\n" +
                      "por uma forte nausea.\n"
+                     ,
+                    "Fim"
                 },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,
@@ -241,7 +243,9 @@ namespace Adventure.PartesJogo
                      "Escuta um som metalico e ao se virar é \n"+
                      "surpreendido por um clarão ofuscante!\n" +
                      "Por um momento tudo fica escuro e voce sente \n"+
-                     " um forte nausea."
+                     " uma forte nausea."
+                     ,
+                    "Fim"
                 },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,
@@ -295,11 +299,11 @@ namespace Adventure.PartesJogo
                 TxtTxtDesc = new List<string>()
                 {
                     "Voce anda sem rumo pelos corredores e...\n" +
-                     "\n"+
                      "Ve um clarão ofuscante!\n" +
-                     "\n"+
                      "Logo tudo fica escuro e voce perde a conciencia... \n" +
                      "É o fim...\n"
+                     ,
+                    "Fim"
                 },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,

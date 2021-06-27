@@ -134,23 +134,35 @@ namespace Adventure.Telas
                 this.ContImg++;
                 this.ContTexto++;
                 this.BackgroundImage = Image.FromFile(PastaImagem + this.Imagem[ContImg]);
-                this.textoDesc.Text = this.Texto[ContTexto];
 
-                if (this.Texto[ContTexto + 1] == "Fim")
+                if (this.Texto[ContTexto].Equals("opt"))
                 {
+                    this.ContTexto++;
+                    this.textoDesc.Text = this.Texto[ContTexto];
+
                     this.btAvancar.Visible = false;
                     this.btOp1.Visible = true;
                     this.btOp2.Visible = true;
                     this.btOp3.Visible = true;
                 }
-
+                else if(this.Texto[ContTexto].Equals("Fim"))
+                {
+                    this.Resposta = 8;
+                    this.Close();
+                }
+                else
+                {
+                    this.textoDesc.Text = this.Texto[ContTexto];
+                }
             }
             else if (this.Texto[this.ContTexto].Equals("Fim"))
             {
+                this.Resposta = 8;
                 this.Close();
             }
-            else if (this.Texto[ContTexto + 1] == null || this.Texto[ContTexto + 1].Equals("Fim"))
+            else if (this.Texto[ContTexto].Equals("opt"))
             {
+                this.ContTexto++;
                 this.textoDesc.Text = this.Texto[ContTexto];
 
                 this.btAvancar.Visible = false;

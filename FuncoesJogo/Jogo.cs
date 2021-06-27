@@ -59,12 +59,15 @@ namespace Adventure.Estrutura
 
         public void ContinuarJogo()
         {
-
+            Jogar();
         }
 
-        public void FimJogo()
+        public void FimJogo(string fim)
         {
+            TelaFimJogo tela = new TelaFimJogo(fim);
+            Application.Run(tela);
 
+            Inicia();
         }
 
         public void Jogar()
@@ -77,8 +80,14 @@ namespace Adventure.Estrutura
                 case "inicio":
                     etapaInicio();
                     break;
+                case "fimDemo":
+                    FimJogo("FimDemo");
+                    break;
                 case "fim":
-                    FimJogo();
+                    FimJogo("Fim");
+                    break;
+                default:
+                    Inicia();
                     break;
             }
         }
@@ -114,7 +123,7 @@ namespace Adventure.Estrutura
                     Inicia();
                     break;
                 case 9:
-                    FimJogo();
+                    FimJogo("Fim");
                     break;
                 default:
                     Jogar();

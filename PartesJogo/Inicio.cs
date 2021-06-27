@@ -54,6 +54,16 @@ namespace Adventure.PartesJogo
                 Tela3(personagem);
             }
 
+            if (this.Resposta != 0 && personagem.Estado == true)
+            {
+                Tela4(personagem);
+            }
+
+            if (this.Resposta != 0 && personagem.Estado == true)
+            {
+                personagem.Etapa = "fimDemo";
+            }
+
             return personagem; 
         }
         #endregion
@@ -63,10 +73,10 @@ namespace Adventure.PartesJogo
         {
             DadosTelaJogo dadosTela = new DadosTelaJogo()
             {
-                EstadoBtAvancar = false,
-                EstadoBtOp1 = true,
-                EstadoBtOp2 = true,
-                EstadoBtOp3 = true,
+                EstadoBtAvancar = true,
+                EstadoBtOp1 = false,
+                EstadoBtOp2 = false,
+                EstadoBtOp3 = false,
                 EstadoBtMenu = true,
                 EstadoTxtDesc = true,
                 EstadoPainelStat = true,
@@ -81,6 +91,8 @@ namespace Adventure.PartesJogo
                 ImgFundo = new List<string>()
                 {
                     @"Prologo\Corredor.jpg"
+                    ,
+                    @"Prologo\Corredor.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
@@ -92,20 +104,23 @@ namespace Adventure.PartesJogo
                 TxtBtOp3 = "Gritar e sair correndo...",
                 TxtTxtDesc = new List<string>()
                 {
-                    "Felismente essa sensação estranha logo passa, \n" +
-                     "as coisas parecem estar se estabilizando.\n"+
-                     "Para um laboratorio voce sente uma estranha \n"+
-                     "brisa que carrega com sigo um cheiro fresco \n" +
-                     "do orvalho da manhã...\n"+
-                     "Aos poucos sua visão vai ficando mais clara e!!!\n"
+                    "Felismente essa sensação estranha logo \n" +
+                     "passa, as coisas parecem estar se \n"+
+                     "estabilizando. Para um laboratorio voce sente\n"+
+                     "uma estranha brisa que carrega com sigo um \n" +
+                     "cheiro fresco do orvalho da manhã...\n"+
+                     "Aos poucos sua visão vai clareando e!!!\n"
                     ,
                     "img"
                     ,
                     "QUE!!! ONDE ESTOU!!!\n" +
                      "Voce se ve no que parece ser o topo de uma \n"+
-                     "montanha, e logo percebe que voce não esta com \n"+
-                     "suas roupas tão pouco se parece com voce mesmo!\n" +
+                     "montanha, e logo percebe que voce não esta \n"+
+                     "com suas roupas tão pouco se parece com voce \n" +
+                     "mesmo!\n" +
                      "Estou vestido como um...\n"
+                     ,
+                    "Fim"
                 },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,
@@ -119,6 +134,8 @@ namespace Adventure.PartesJogo
 
             TelaJogo tela = new TelaJogo(dadosTela);
             Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
         }
         #endregion
 
@@ -137,10 +154,10 @@ namespace Adventure.PartesJogo
         {
             DadosTelaJogo dadosTela = new DadosTelaJogo()
             {
-                EstadoBtAvancar = false,
-                EstadoBtOp1 = true,
-                EstadoBtOp2 = true,
-                EstadoBtOp3 = true,
+                EstadoBtAvancar = true,
+                EstadoBtOp1 = false,
+                EstadoBtOp2 = false,
+                EstadoBtOp3 = false,
                 EstadoBtMenu = true,
                 EstadoTxtDesc = true,
                 EstadoPainelStat = true,
@@ -166,19 +183,23 @@ namespace Adventure.PartesJogo
                 TxtBtOp3 = "Gritar e sair correndo...",
                 TxtTxtDesc = new List<string>()
                 {
-                    "Parabens! Voce acabou de selecionar sua classe.\n" +
-                     "Conforme o decorrer do jogo voce vai se deparar \n"+
-                     "com situações e escolhas.\n" +
-                     "Escolha com sabedoria, pois o rumo do jogo pode \n"+
-                     "ser alterado drasticamente conforme sua decisão.\n"
+                    "Parabens! Voce acabou de selecionar sua\n" +
+                    "classe. \n" +
+                     "Conforme o decorrer do jogo voce vai se \n"+
+                     "deparar com situações e escolhas.\n" +
+                     "Escolha com sabedoria, pois o rumo do jogo \n"+
+                     "pode ser alterado drasticamente conforme sua \n" +
+                     "   decisão."
                     ,
-                    "Apos algumas decisões e etapas do jogo voce \n" +
-                     "tambem recebera rescompensas e muitas veses \n"+
-                     "podera escolher entre algumas opções, podendo \n" +
-                     "variar entre atributos para o seu personagem, \n"+
-                     "equipamentos, entre outros.\n" +
+                    "Apos algumas decisões e etapas do jogo \n" +
+                     "voce tambem recebera rescompensas e muitas \n"+
+                     "veses podera escolher entre algumas opções, \n" +
+                     "podendo variar entre atributos para o seu \n"+
+                     "personagem, equipamentos, entre outros.\n" +
                      "A seguir voce tera sua primeira escolha de\n"+
                      "   recompensas."
+                     ,
+                    "Fim"
         },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,
@@ -192,6 +213,8 @@ namespace Adventure.PartesJogo
 
             TelaJogo tela = new TelaJogo(dadosTela);
             Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
         }
         #endregion
 
@@ -318,6 +341,8 @@ namespace Adventure.PartesJogo
                 }
                 personagem.defineAtributos();
             }
+
+            this.Resposta = tela.Resposta;
         }
         #endregion
 
@@ -326,10 +351,10 @@ namespace Adventure.PartesJogo
         {
             DadosTelaJogo dadosTela = new DadosTelaJogo()
             {
-                EstadoBtAvancar = false,
-                EstadoBtOp1 = true,
-                EstadoBtOp2 = true,
-                EstadoBtOp3 = true,
+                EstadoBtAvancar = true,
+                EstadoBtOp1 = false,
+                EstadoBtOp2 = false,
+                EstadoBtOp3 = false,
                 EstadoBtMenu = true,
                 EstadoTxtDesc = true,
                 EstadoPainelStat = true,
@@ -350,24 +375,28 @@ namespace Adventure.PartesJogo
                 ImgBtOp3 = @"Genericas\Fundo_Op.png",
                 ImgTxtDesc = @"Genericas\FundoText.png",
                 ImgPainelStat = @"Genericas\Painel_Stat.jpg",
-                TxtBtOp1 = "Olhar para traz",
-                TxtBtOp2 = "Continuar ao laboratorio",
-                TxtBtOp3 = "Gritar e sair correndo...",
+                TxtBtOp1 = "Espere, eu não fasso ideia!",
+                TxtBtOp2 = "Eu agiria com mais cautela no \nseu lugar!",
+                TxtBtOp3 = "Ficar em silencio",
                 TxtTxtDesc = new List<string>()
                 {
                     "Voce continua sem entender nada, \n" +
                      "principalmente por parecer lembrar e fazer \n"+
                      "coisas as quais nunca fez ou viveu antes.\n" +
                      "Sua cabeça esta uma confuzão e doi um pouco.\n"+
-                     "Mas antes mesmo de ter tempo para raciocinar \n" +
+                     "Mas antes mesmo de ter tempo para raciocinar\n" +
                      "sente algo espetar suas costas, e uma voz \n"+
                      "   aguda gritando:"
+                    ,
+                    "opt"
                     ,
                     "Não se mova e identifique-se!\n" +
                      "Apesar de a voz falar em um dialeto que voce \n"+
                      "não conhece, de alguma forma voce entende \n" +
                      "cada palavra.\n"
-            },
+                     ,
+                    "Fim"
+                },
                 TxtCarisma = personagem.Carisma,
                 TxtInteligencia = personagem.Inteligencia,
                 TxtResistencia = personagem.Restencia,
@@ -378,76 +407,117 @@ namespace Adventure.PartesJogo
                 TxtDinheiro = personagem.Dinheiro
             };
 
+            if (!personagem.getClasse().PoderPrincipal.Equals(""))
+            {
+                dadosTela.TxtBtOp3 = personagem.getClasse().PoderPrincipal;
+            }
+
             TelaJogo tela = new TelaJogo(dadosTela);
             Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
         }
         #endregion
 
-        /*
-
-            Console.Clear();
-            //inf.infPC(personagem, personagem.getClasse());
-            if (!personagem.getClasse().PoderPrincipal.Equals(""))
+        #region Tela4
+        public void Tela4(Personagem personagem)
+        {
+            DadosTelaJogo dadosTela = new DadosTelaJogo()
             {
-                Console.WriteLine("\n\n\nPrecione: \n 1 Para 'Espere, eu não fasso ideia, quando me dei por si ja estava aqui, não lembro de nada...'\n 2 Para 'Eu agiria com mais cautela no seu lugar. Voce sabe a quem esta ameaçando!'\n 3 Para usar tecnica " + personagem.getClasse().PoderPrincipal);
-                nResposta = 3;
-            }
-            else
-            {
-                Console.WriteLine("\n\n\nPrecione: \n 1 Para 'Espere, eu não fasso ideia, quando me dei por si ja estava aqui, não lembro de nada...'\n 2 Para 'Eu agiria com mais cautela no seu lugar. Voce sabe a quem esta ameaçando!'");
-                nResposta = 2;
-            }
-            try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-
-            do
-            {
-                if (resposta >= 1 && resposta <= nResposta)
+                EstadoBtAvancar = true,
+                EstadoBtOp1 = false,
+                EstadoBtOp2 = false,
+                EstadoBtOp3 = false,
+                EstadoBtMenu = true,
+                EstadoTxtDesc = true,
+                EstadoPainelStat = true,
+                EstadoCarisma = true,
+                EstadoInteligencia = true,
+                EstadoResistencia = true,
+                EstadoForca = true,
+                EstadoSabedoria = true,
+                EstadoAgilidade = true,
+                EstadoSaude = true,
+                EstadoDinheiro = true,
+                ImgFundo = new List<string>()
                 {
-                    avanca = true;
-                    switch (resposta)
+                    @"Prologo\Corredor.jpg"
+                },
+                ImgBtOp1 = @"Genericas\Fundo_Op.png",
+                ImgBtOp2 = @"Genericas\Fundo_Op.png",
+                ImgBtOp3 = @"Genericas\Fundo_Op.png",
+                ImgTxtDesc = @"Genericas\FundoText.png",
+                ImgPainelStat = @"Genericas\Painel_Stat.jpg",
+                TxtBtOp1 = "Espere, eu não fasso ideia!",
+                TxtBtOp2 = "Eu agiria com mais cautela no seu lugar!",
+                TxtBtOp3 = "Ficar em silencio",
+                TxtTxtDesc = new List<string>()
+                {
+                    ""
+                     ,
+                    "Fim"
+                },
+                TxtCarisma = personagem.Carisma,
+                TxtInteligencia = personagem.Inteligencia,
+                TxtResistencia = personagem.Restencia,
+                TxtForca = personagem.Forca,
+                TxtSabedoria = personagem.Magia,
+                TxtAgilidade = personagem.Agilidade,
+                TxtSaude = personagem.Saude,
+                TxtDinheiro = personagem.Dinheiro
+            };
+
+            switch (this.Resposta)
+            {
+                case 1:
+                    dadosTela.TxtTxtDesc[0] =
+                        "Espere, não fasso ideia, \n" +
+                        "não lembro de nada...\n";
+                    break;
+                case 2:
+                    dadosTela.TxtTxtDesc[0] =
+                        "Eu agiria com mais cautela no seu lugar. \n" +
+                         "Voce sabe a quem esta ameaçando!\n";
+                    break;
+                case 3:
+                    if (!personagem.getClasse().PoderPrincipal.Equals(""))
                     {
-                        case 1:
-                            Console.Clear();
-                            //inf.infPC(personagem, personagem.getClasse());
-                            Console.WriteLine("Espere, não fasso ideia, não lembro de nada...");
-                            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-                            Console.ReadLine();
-                            break;
-                        case 2:
-                            Console.Clear();
-                            //inf.infPC(personagem, personagem.getClasse());
-                            Console.WriteLine("Eu agiria com mais cautela. Voce sabe a quem esta ameaçando!");
-                            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-                            Console.ReadLine();
-                            break;
-                        case 3:
-                            Console.Clear();
-                            //inf.infPC(personagem, personagem.getClasse());
-                            if (personagem.getClasse().Nome == "Guerreiro")
-                            {
-                                Console.WriteLine("Voce vira e rapidamente avança em furia contra o que parecem ser 3 monges armados e um senhor de idade bastante avançada.");
-                            }
-                            else if (personagem.getClasse().Nome == "Mago")
-                            {
-                                Console.WriteLine("Voce cria um vortice de labaredas entre suas mãos e arremeça contra o que parecem ser 3 monges armados e um senhor de idade bastante avançada.");
-                            }
-                            else if (personagem.getClasse().Nome == "Arqueiro")
-                            {
-                                Console.WriteLine("Voce salta velosmente para longe e vo o que  parecem ser 3 monges armados e um senhor de idade bastante avançada.");
-                            }
-                            Console.WriteLine("\n\n\nPrecione qualquer tecla para continuar...");
-                            Console.ReadLine();
-                            break;
+                        if (personagem.getClasse().Nome == "Guerreiro")
+                        {
+                            dadosTela.TxtTxtDesc[0] =
+                                "Voce vira e rapidamente avança em furia \n" +
+                                 "contra o que parecem ser 3 monges armados e \n" +
+                                 "um senhor de idade bastante avançada.\n";
+                        }
+                        else if (personagem.getClasse().Nome == "Mago")
+                        {
+                            dadosTela.TxtTxtDesc[0] =
+                                "Voce cria um vortice de labaredas entre \n" +
+                                 "suas mãos e arremeça contra o que parecem ser \n" +
+                                 "3 monges armados e um senhor de idade bastante \n" +
+                                 "avançada.\n";
+                        }
+                        else if (personagem.getClasse().Nome == "Arqueiro")
+                        {
+                            dadosTela.TxtTxtDesc[0] =
+                                "Voce salta velosmente para longe e vo o \n" +
+                                 "que  parecem ser 3 monges armados e um senhor \n" +
+                                 "de idade bastante avançada.\n";
+                        }
                     }
-                    personagem.defineAtributos();
-                }
-                else
-                {
-                    Console.WriteLine("\n\n\nOpção " + resposta + " Invalida! Selecione outro valor ...");
-                    try { resposta = Int32.Parse(Console.ReadLine()); } catch (Exception x) { }
-                }
-            } while (avanca == false);
+                    else
+                    {
+                        dadosTela.TxtTxtDesc[0] =
+                                "Voce permanece em silencio\n";
+                    }
+                    break;
+            }
 
-         */
+            TelaJogo tela = new TelaJogo(dadosTela);
+            Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
+        }
+        #endregion
     }
 }
