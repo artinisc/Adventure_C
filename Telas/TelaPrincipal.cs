@@ -46,7 +46,7 @@ namespace Adventure
 
         private void BtContinuar_Click(object sender, EventArgs e)
         {
-            this.Resposta = 0;
+            this.Resposta = 2;
             this.Close();
         }
     }

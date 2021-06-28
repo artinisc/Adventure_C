@@ -371,7 +371,7 @@ namespace Adventure.PartesJogo
                 {
                     @"Inicio\Mosteiro.jpg"
                     ,
-                    @"Inicio\Monges.jpg"
+                    @"Inicio\MongesG.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
@@ -449,7 +449,7 @@ namespace Adventure.PartesJogo
                 EstadoDinheiro = true,
                 ImgFundo = new List<string>()
                 {
-                    @"Prologo\Corredor.jpg"
+                    @"Inicio\MongesG.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
@@ -504,6 +504,7 @@ namespace Adventure.PartesJogo
                         }
                         else if (personagem.getClasse().Nome == "Arqueiro")
                         {
+                            dadosTela.ImgFundo[0] = @"Inicio\MongesG.jpg";
                             dadosTela.TxtTxtDesc[0] =
                                 "Voce salta velosmente para longe \n";
                         }

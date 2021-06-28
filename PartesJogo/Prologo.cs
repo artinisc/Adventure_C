@@ -26,11 +26,9 @@ namespace Adventure.PartesJogo
                     case 1:
                         personagem.Escolhas.RecebeuInformacoesLaboratorio = true;
                         Tela2R1(personagem);
-                        personagem.Etapa = "inicio";
                         break;
                     case 2:
                         Tela2R2(personagem);
-                        personagem.Etapa = "inicio";
                         break;
                     case 3:
                         Tela2R3(personagem);
@@ -38,6 +36,11 @@ namespace Adventure.PartesJogo
                         personagem.Estado = false;
                         break;
                 }
+            }
+
+            if (this.Resposta != 0 && personagem.Estado == true)
+            {
+                personagem.Etapa = "inicio";
             }
             return personagem;
         }
@@ -196,6 +199,8 @@ namespace Adventure.PartesJogo
 
             TelaJogo tela = new TelaJogo(dadosTela);
             Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
         }
 
         public void Tela2R2(Personagem personagem)
@@ -258,6 +263,8 @@ namespace Adventure.PartesJogo
 
             TelaJogo tela = new TelaJogo(dadosTela);
             Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
         }
 
         public void Tela2R3(Personagem personagem)
@@ -312,6 +319,8 @@ namespace Adventure.PartesJogo
 
             TelaJogo tela = new TelaJogo(dadosTela);
             Application.Run(tela);
+
+            this.Resposta = tela.Resposta;
         }
         #endregion
 
