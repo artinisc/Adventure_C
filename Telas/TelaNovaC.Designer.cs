@@ -70,7 +70,7 @@ namespace Adventure.Telas
             this.nomeGuerreiro.BackColor = System.Drawing.Color.Transparent;
             this.nomeGuerreiro.Location = new System.Drawing.Point(65, 160);
             this.nomeGuerreiro.Name = "nomeGuerreiro";
-            this.nomeGuerreiro.Size = new System.Drawing.Size(232, 50);
+            this.nomeGuerreiro.Size = new System.Drawing.Size(200, 50);
             this.nomeGuerreiro.TabIndex = 1;
             // 
             // nomeMago
@@ -78,7 +78,7 @@ namespace Adventure.Telas
             this.nomeMago.BackColor = System.Drawing.Color.Transparent;
             this.nomeMago.Location = new System.Drawing.Point(384, 160);
             this.nomeMago.Name = "nomeMago";
-            this.nomeMago.Size = new System.Drawing.Size(232, 50);
+            this.nomeMago.Size = new System.Drawing.Size(200, 50);
             this.nomeMago.TabIndex = 1;
             // 
             // nomeArqueiro
@@ -86,7 +86,7 @@ namespace Adventure.Telas
             this.nomeArqueiro.BackColor = System.Drawing.Color.Transparent;
             this.nomeArqueiro.Location = new System.Drawing.Point(704, 160);
             this.nomeArqueiro.Name = "nomeArqueiro";
-            this.nomeArqueiro.Size = new System.Drawing.Size(232, 50);
+            this.nomeArqueiro.Size = new System.Drawing.Size(200, 50);
             this.nomeArqueiro.TabIndex = 1;
             // 
             // Descricao
@@ -94,7 +94,7 @@ namespace Adventure.Telas
             this.Descricao.BackColor = System.Drawing.Color.Transparent;
             this.Descricao.Location = new System.Drawing.Point(299, 35);
             this.Descricao.Name = "Descricao";
-            this.Descricao.Size = new System.Drawing.Size(380, 67);
+            this.Descricao.Size = new System.Drawing.Size(350, 67);
             this.Descricao.TabIndex = 1;
             // 
             // btGuerreiro
