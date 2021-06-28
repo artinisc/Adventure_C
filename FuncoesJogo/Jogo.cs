@@ -1,6 +1,7 @@
 ﻿using Adventure.FuncoesJogo;
 using Adventure.PartesJogo;
 using Adventure.Telas;
+using Microsoft.VisualBasic.Devices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,15 +16,20 @@ namespace Adventure.Estrutura
         #region Objetos
         Personagem personagem = new Personagem();
         public int resposta = 0;
-        Boolean avanca = false;
+        public string PastaSom { get; set; }
         #endregion
 
         #region Jogo
         public void Inicia()
         {
-           
+            PastaSom = Application.StartupPath + @"\Audio\trilha.wav";
+
+            Audio trilha = new Audio();
+            trilha.Play(PastaSom);
+
             TelaPrincipal telaPrincipal = new TelaPrincipal();
             Application.Run(telaPrincipal);
+
 
             switch (telaPrincipal.Resposta)
             {
