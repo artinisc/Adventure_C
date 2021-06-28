@@ -90,34 +90,35 @@ namespace Adventure.PartesJogo
                 EstadoDinheiro = true,
                 ImgFundo = new List<string>()
                 {
-                    @"Prologo\Corredor.jpg"
+                    @"Inicio\MosteiroDesfoque.jpg"
                     ,
-                    @"Prologo\Corredor.jpg"
+                    @"Inicio\Mosteiro.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
                 ImgBtOp3 = @"Genericas\Fundo_Op.png",
                 ImgTxtDesc = @"Genericas\FundoText.png",
                 ImgPainelStat = @"Genericas\Painel_Stat.jpg",
-                TxtBtOp1 = "Olhar para traz",
-                TxtBtOp2 = "Continuar ao laboratorio",
-                TxtBtOp3 = "Gritar e sair correndo...",
+                TxtBtOp1 = "",
+                TxtBtOp2 = "",
+                TxtBtOp3 = "",
                 TxtTxtDesc = new List<string>()
                 {
-                    "Felismente essa sensação estranha logo \n" +
-                     "passa, as coisas parecem estar se \n"+
-                     "estabilizando. Para um laboratorio voce sente\n"+
-                     "uma estranha brisa que carrega com sigo um \n" +
-                     "cheiro fresco do orvalho da manhã...\n"+
+                    "Felismente essa sensação logo passa,\n" +
+                     "sua visão parece estar estabilizando.\n"+
+                     "Mas para um laboratorio voce sente\n"+
+                     "uma estranha brisa que carrega com sigo\n" +
+                     "o cheiro fresco do orvalho da manhã...\n"+
                      "Aos poucos sua visão vai clareando e!!!\n"
                     ,
                     "img"
                     ,
                     "QUE!!! ONDE ESTOU!!!\n" +
-                     "Voce se ve no que parece ser o topo de uma \n"+
-                     "montanha, e logo percebe que voce não esta \n"+
-                     "com suas roupas tão pouco se parece com voce \n" +
-                     "mesmo!\n" +
+                     "Voce se ve no alto de uma montanha aos pes \n"+
+                     "do que parece um castelo ou monasterio,\n"+
+                     "mas antes que possa observar melhor percebe\n"+
+                     "que voce não esta com suas roupas tão pouco \n" +
+                     "se parece com voce mesmo!\n" +
                      "Estou vestido como um...\n"
                      ,
                     "Fim"
@@ -171,16 +172,16 @@ namespace Adventure.PartesJogo
                 EstadoDinheiro = true,
                 ImgFundo = new List<string>()
                 {
-                    @"Prologo\Corredor.jpg"
+                    @"Genericas\Conselheiro.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
                 ImgBtOp3 = @"Genericas\Fundo_Op.png",
                 ImgTxtDesc = @"Genericas\FundoText.png",
                 ImgPainelStat = @"Genericas\Painel_Stat.jpg",
-                TxtBtOp1 = "Olhar para traz",
-                TxtBtOp2 = "Continuar ao laboratorio",
-                TxtBtOp3 = "Gritar e sair correndo...",
+                TxtBtOp1 = "",
+                TxtBtOp2 = "",
+                TxtBtOp3 = "",
                 TxtTxtDesc = new List<string>()
                 {
                     "Parabens! Voce acabou de selecionar sua\n" +
@@ -368,7 +369,9 @@ namespace Adventure.PartesJogo
                 EstadoDinheiro = true,
                 ImgFundo = new List<string>()
                 {
-                    @"Prologo\Corredor.jpg"
+                    @"Inicio\Mosteiro.jpg"
+                    ,
+                    @"Inicio\Monges.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
@@ -388,13 +391,18 @@ namespace Adventure.PartesJogo
                      "sente algo espetar suas costas, e uma voz \n"+
                      "   aguda gritando:"
                     ,
-                    "opt"
-                    ,
                     "Não se mova e identifique-se!\n" +
                      "Apesar de a voz falar em um dialeto que voce \n"+
                      "não conhece, de alguma forma voce entende \n" +
                      "cada palavra.\n"
-                     ,
+                    ,
+                    "img"
+                    ,
+                    "opt"
+                    ,
+                    "Voce vira rapidamente e ve o que parecem \n" +
+                    "ser tres estranhos monges em posição de batalha\n"
+                    ,
                     "Fim"
                 },
                 TxtCarisma = personagem.Carisma,
@@ -485,24 +493,19 @@ namespace Adventure.PartesJogo
                         if (personagem.getClasse().Nome == "Guerreiro")
                         {
                             dadosTela.TxtTxtDesc[0] =
-                                "Voce vira e rapidamente avança em furia \n" +
-                                 "contra o que parecem ser 3 monges armados e \n" +
-                                 "um senhor de idade bastante avançada.\n";
+                                "Voce avança em furia contra os \n" +
+                                 "individuos.\n";
                         }
                         else if (personagem.getClasse().Nome == "Mago")
                         {
                             dadosTela.TxtTxtDesc[0] =
                                 "Voce cria um vortice de labaredas entre \n" +
-                                 "suas mãos e arremeça contra o que parecem ser \n" +
-                                 "3 monges armados e um senhor de idade bastante \n" +
-                                 "avançada.\n";
+                                 "suas mãos e arremeça contra os individuos \n";
                         }
                         else if (personagem.getClasse().Nome == "Arqueiro")
                         {
                             dadosTela.TxtTxtDesc[0] =
-                                "Voce salta velosmente para longe e vo o \n" +
-                                 "que  parecem ser 3 monges armados e um senhor \n" +
-                                 "de idade bastante avançada.\n";
+                                "Voce salta velosmente para longe \n";
                         }
                     }
                     else
