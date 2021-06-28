@@ -122,11 +122,11 @@ namespace Adventure.PartesJogo
                 EstadoDinheiro = true,
                 ImgFundo = new List<string>()
                 {
-                    @"Prologo\Corredor.jpg"
+                    @"Prologo\CorredorProfessora.jpg"
                     ,
-                    @"Prologo\Fundo_Basico.jpg"
+                    @"Prologo\LaboratorioEsfera.jpg"
                     ,
-                    @"Prologo\Corredor.jpg"
+                    @"Prologo\Clarao.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
@@ -198,8 +198,6 @@ namespace Adventure.PartesJogo
             Application.Run(tela);
         }
 
-        //personagem.ultimaR = 1;
-
         public void Tela2R2(Personagem personagem)
         {
             DadosTelaJogo dadosTela = new DadosTelaJogo()
@@ -221,11 +219,9 @@ namespace Adventure.PartesJogo
                 EstadoDinheiro = true,
                 ImgFundo = new List<string>()
                 {
-                    @"Prologo\Corredor.jpg"
+                    @"Prologo\Laboratorio.jpg"
                     ,
-                    @"Prologo\Fundo_Basico.jpg"
-                    ,
-                    @"Prologo\Corredor.jpg"
+                    @"Prologo\Clarao.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
@@ -239,9 +235,12 @@ namespace Adventure.PartesJogo
                 {
                     "Voce chega ao seu laboratorio e inicia os \n" +
                      "preparativos para dar continuidade nos testes \n"+
-                     "de materiais supercondutores...\n" +
-                     "Escuta um som metalico e ao se virar é \n"+
-                     "surpreendido por um clarão ofuscante!\n" +
+                     "de materiais supercondutores, quando...\n"
+                     ,
+                     "img"
+                     ,
+                     "Escuta um som metalico e ao se virar\n"+
+                     "é surpreendido por um clarão ofuscante!\n" +
                      "Por um momento tudo fica escuro e voce sente \n"+
                      " uma forte nausea."
                      ,
@@ -282,11 +281,7 @@ namespace Adventure.PartesJogo
                 EstadoDinheiro = true,
                 ImgFundo = new List<string>()
                 {
-                    @"Prologo\Corredor.jpg"
-                    ,
-                    @"Prologo\Fundo_Basico.jpg"
-                    ,
-                    @"Prologo\Corredor.jpg"
+                    @"Prologo\Clarao.jpg"
                 },
                 ImgBtOp1 = @"Genericas\Fundo_Op.png",
                 ImgBtOp2 = @"Genericas\Fundo_Op.png",
